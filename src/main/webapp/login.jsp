@@ -23,7 +23,7 @@
                 <img src="./assets/img/logo-gradiente.png" alt="Tierra Media" id="logo">
             </div>
     
-            <form class="form-group justify-content-center" id="usuario-form">
+            <form class="form-group justify-content-center" id="usuario-form" action="login" method="post">
 
                 <div>
                     <label for="user">Nombre de usuario</label>
@@ -34,18 +34,20 @@
                 </div>
 
                 <div>
-                    <label for="pass" class="form-label">Contraseña</label>
+                    <label for="pass" class="form-label">Contrase&#x000F1;a</label>
                     <input type="password" class="form-control border-0" aria-describedby="passwordHelpInline" id="pass">
                     <small id="text" class="text-muted visible">
                         Must be 8-20 characters long.
                     </small>
                 </div>
 
-            </form>
+	            <div class="contenedor">
+	                <button class="btn btn-login" id="btn-ingresar">
+	                	Ingresar
+	                <div class="color"> </div></button>
+	            </div>
 
-            <div class="contenedor">
-                <button class="btn btn-login" id="btn-ingresar">Ingresar<div class="color"> </div></button>
-            </div>
+            </form>
 
         </div>
 

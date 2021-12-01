@@ -17,11 +17,15 @@
 
 <body>
 
-	<div class="contenedor" id="imagen">
+	<h1>
+		HOLA ${user}
+	</h1>
 
+	<div class="contenedor" id="imagen">
+	
 		<div id="logo-contenedor">
 			<img src="./assets/img/logo-gradiente.png" alt="Tierra Media"
-				id="logo">
+				id="logo-index" title="INICIAR SESIÓN">
 		</div>
 
 		<div id="javaleros">
