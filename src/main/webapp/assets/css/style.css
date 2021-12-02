@@ -1,14 +1,16 @@
 :root {
     /*VARIABLES*/
-    --mainColor: #061C25;
+    --mainColor: #061D26;
+    --color-dark: #002650;
     --textColor: #79D4FF;
     --textColor2: #A4BAD7;
+    --color-light: #E9F8FF;
     --color-border: #007BC6;
     --inputColor: #2D3A4A;
     --shadowColor: #000000;
     --color-gold: #D0A85C;
     --color-green: #85F279;
-    --color-body-bg: linear-gradient(254.12deg, #002650 0%, #061C25 100%);
+    --color-body-bg: linear-gradient(254.12deg, #002650 0%, #061D26 100%);
     --fullShadow: 0px 0px 15px 4px var(--shadowColor);
 }
 
@@ -146,4 +148,41 @@ img.nav-logo {
 
 .stats .stats-tiempo {
     color: var(--color-green);
+}
+
+
+
+.border-info {
+    border: 1px solid var(--color-border) !important;
+}
+
+.btn-outline-primary {
+    color: var(--textColor);
+    border: 1px solid var(--textColor);
+}
+
+.btn-outline-primary:hover {
+    color: var(--color-dark);
+    border: 1px solid var(--textColor);
+    background-color: var(--textColor);
+}
+
+.btn-primary {
+    color: var(--color-dark);
+    border: 1px solid var(--textColor);
+    background-color: var(--textColor);
+}
+
+.btn-primary:hover {
+    color: var(--color-dark);
+    border: 1px solid var(--color-border);
+    background-color: var(--color-border);
+}
+
+.card {
+    background-color: var(--mainColor);
+}
+
+.card .card-body .card-title {
+    color: var(--color-light);
 }
