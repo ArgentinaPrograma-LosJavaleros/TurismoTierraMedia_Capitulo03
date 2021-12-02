@@ -12,6 +12,9 @@
     --color-green: #85F279;
     --color-body-bg: linear-gradient(254.12deg, #002650 0%, #061D26 100%);
     --fullShadow: 0px 0px 15px 4px var(--shadowColor);
+    
+    --border-radius-card: 10pt;
+    --border-radius-buttons: 7pt;
 }
 
 /*-----------------------------------------------------*/
@@ -110,6 +113,7 @@ input {
 
 body {
     background: var(--color-body-bg);
+    user-select: none;
 }
 
 
@@ -150,8 +154,6 @@ img.nav-logo {
     color: var(--color-green);
 }
 
-
-
 .border-info {
     border: 1px solid var(--color-border) !important;
 }
@@ -159,28 +161,33 @@ img.nav-logo {
 .btn-outline-primary {
     color: var(--textColor);
     border: 1px solid var(--textColor);
+    border-radius: var(--border-radius-buttons);
 }
 
 .btn-outline-primary:hover {
     color: var(--color-dark);
     border: 1px solid var(--textColor);
     background-color: var(--textColor);
+    border-radius: var(--border-radius-buttons);
 }
 
 .btn-primary {
     color: var(--color-dark);
     border: 1px solid var(--textColor);
     background-color: var(--textColor);
+    border-radius: var(--border-radius-buttons);
 }
 
 .btn-primary:hover {
     color: var(--color-dark);
     border: 1px solid var(--color-border);
     background-color: var(--color-border);
+    border-radius: var(--border-radius-buttons);
 }
 
 .card {
     background-color: var(--mainColor);
+    border-radius: var(--border-radius-card);
 }
 
 .card .card-body .card-title {

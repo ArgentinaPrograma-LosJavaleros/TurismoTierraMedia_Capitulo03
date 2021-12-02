@@ -9,17 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tierra Media &#x0007C; Inicio</title>
     <!--FontAwesome-->
-    <script src="https://kit.fontawesome.com/0931472a64.js" crossorigin="anonymous"></script>
+    <script defer src="https://kit.fontawesome.com/0931472a64.js" crossorigin="anonymous"></script>
     <!--Bootstrap-->
-    <link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-	integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
-	crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <!--CSS-->
     <link rel="stylesheet" href="./assets/css/style.css"/>
 </head>
 <body>
-    <nav class="navbar nav sticky-top py-2">
+    <nav class="shadow-lg navbar nav sticky-top py-2">
         <div class="container-fluid" >
             <a href="#" >
                 <img class="nav-logo" src="./assets/img/logo-gradiente.png" alt="Tierra Media">
@@ -47,10 +44,10 @@
         </div>
     </nav>
     <section class="container-xl pt-2 min-vh-100">
-        <section class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4 pt-4 " >
-        	<c:forEach begin = "1" end = "15">
+        <section class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 pt-4 " >
+        	<c:forEach begin = "1" end = "10">
 	            <article class="px-3 pb-5">
-	                <div class="card border border-info">
+	                <div class="shadow-lg card border border-info overflow-hidden">
 	                    <div class="">
 	                        <img class="card-img-top" src="./assets/img/img-test-atraccion.png" alt="">
 	                    </div>
