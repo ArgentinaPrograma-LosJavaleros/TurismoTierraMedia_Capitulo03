@@ -1,4 +1,4 @@
 .settings
 target
-target/m2e-wtp
+*.properties
 src/main/resources
