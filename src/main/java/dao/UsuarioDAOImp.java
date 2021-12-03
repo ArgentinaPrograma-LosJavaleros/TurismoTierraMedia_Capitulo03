@@ -116,11 +116,14 @@ public class UsuarioDAOImp implements UsuarioDAO {
 	public List<Usuario> findAllBy(String campo, String operador, String valor) throws SQLException {
 		List<Usuario> listaDeUsuarios = new ArrayList<Usuario>();
 		String condicion = "";
+		
 		if(!campo.equals("") && !operador.equals("") && !valor.equals("")) 
 			condicion = campo + " " + operador + " " + valor;
+		
 		ResultSet rs = CRUD.select("usuarios", "*", condicion);
+		
 		while (rs.next())
-		listaDeUsuarios.add(new Usuario(rs.getInt("id_usuario"), 
+			listaDeUsuarios.add(new Usuario(rs.getInt("id_usuario"), 
 										rs.getString("nombre"), 
 										rs.getInt("monedas"),
 										rs.getDouble("tiempo"),
