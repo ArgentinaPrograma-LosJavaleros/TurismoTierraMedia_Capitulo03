@@ -41,7 +41,6 @@ public class App {
 
 		input.close();
 		
-		ConnectionProvider.closeConnection();
 		System.out.println("Gracias por utilizar nuestro Sistema :) � JAVALEROS");
 	}
 }

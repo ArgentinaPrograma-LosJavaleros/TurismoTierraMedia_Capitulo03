@@ -1,2 +1,3 @@
-target/
-*.properties
+.settings
+target
+src/main/resource/*
