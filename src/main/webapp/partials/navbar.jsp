@@ -3,12 +3,12 @@
 <nav class="shadow-lg navbar nav sticky-top py-2">
 	<div class="container-fluid">
 		<a href="#"> <img class="nav-logo"
-			src="./assets/img/logo-gradiente.png" alt="Tierra Media">
+			src="/TurismoTierraMedia_Capitulo03/assets/img/logo-gradiente.png" alt="Tierra Media">
 		</a>
 		<div
 			class="usuario-stats d-flex flex-row-reverse justify-content-center">
 			<div class="user-img ms-3 ">
-				<img src="./assets/img/fondo-GRANDE.png" alt="">
+				<img src="/TurismoTierraMedia_Capitulo03/assets/img/fondo-GRANDE.png" alt="">
 			</div>
 
 			<div class="stats d-flex flex-row justify-content-between">

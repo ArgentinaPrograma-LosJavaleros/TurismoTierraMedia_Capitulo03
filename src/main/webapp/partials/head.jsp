@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tierra Media &#x0007C; Inicio</title>
 <!--FontAwesome-->
-<link href="./assets/icons/fontawesome/css/all.css" rel="stylesheet">
+<link href="/TurismoTierraMedia_Capitulo03/assets/icons/fontawesome/css/all.css" rel="stylesheet">
 <!--Bootstrap-->
 <link
-	href="./assets/bootstrap/css/bootstrap.min.css"
+	href="/TurismoTierraMedia_Capitulo03/assets/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
 <script defer
-	src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+	src="/TurismoTierraMedia_Capitulo03/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 	
 <!--CSS-->
-<link rel="stylesheet" href="./assets/css/style.css" />
+<link rel="stylesheet" href="/TurismoTierraMedia_Capitulo03/assets/css/style.css" />

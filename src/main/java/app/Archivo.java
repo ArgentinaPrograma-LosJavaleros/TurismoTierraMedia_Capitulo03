@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
-import dao.TematicaDAOImp;
 import model.Atraccion;
 import model.PromoAbsoluta;
 import model.PromoAxB;
@@ -21,6 +20,7 @@ import model.Promocion;
 import model.Ticket;
 import model.TipoPromocion;
 import model.Usuario;
+import persistence.impl.TematicaDAOImp;
 
 public class Archivo {
 
@@ -46,14 +46,14 @@ public class Archivo {
 				// Crea una array con cada palabra separada por un espacio.
 				String valores[] = line.split(" ");
 
-				// Reemplaza el guión bajo en el nombre del usuario por un espacio.
+				// Reemplaza el guiï¿½n bajo en el nombre del usuario por un espacio.
 				valores[0] = valores[0].replace('_', ' ');
 
 				int monedas = Integer.parseInt(valores[1]);
 				double tiempo = Double.parseDouble(valores[2]);
 
-				// Añade al usuario al arraylist de usuarios con su nombre, monedas, tiempo y
-				// temática preferida.
+				// Aï¿½ade al usuario al arraylist de usuarios con su nombre, monedas, tiempo y
+				// temï¿½tica preferida.
 				usuarios.add(new Usuario(0,valores[0], monedas, tiempo, tematica.
 						findBy("nombre", "=", "\"" + (valores[3]) + "\"")));
 				//new Tematica(Integer.valueOf(valores[3]))
@@ -212,7 +212,7 @@ public class Archivo {
 			pw.printf( "|%46s|\n", a);
 		pw.println("|                                              |");
 		pw.println("|                                              |");
-		pw.println("|        ¡MUCHAS GRACIAS POR SU COMPRA!        |");
+		pw.println("|        ï¿½MUCHAS GRACIAS POR SU COMPRA!        |");
 		pw.println("|                                              |");
 		pw.println("|______________________________________________|");
 		

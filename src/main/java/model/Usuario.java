@@ -4,7 +4,7 @@ import java.sql.SQLException;
 
 import app.NoExisteTematicaException;
 import app.Sistema;
-import controller.AtraccionController;
+import services.AtraccionService;
 
 public class Usuario implements Comparable<Usuario>{
 
@@ -73,7 +73,7 @@ public class Usuario implements Comparable<Usuario>{
 		return this.preferencia;
 	}
 	
-	// Métodos
+	// Mï¿½todos
 	//--------------------------------------------------------------------------
 	@Override
 	public String toString() {
@@ -120,7 +120,7 @@ public class Usuario implements Comparable<Usuario>{
 
 	
 	public void comprar(Sugerible producto, Ticket ticket) throws SQLException, NoExisteTematicaException {
-		AtraccionController atraccion = new AtraccionController();
+		AtraccionService atraccion = new AtraccionService();
 		
 		this.setCantidadMonedas(this.cantidadMonedas - producto.getCosto());
 		this.setTiempoDisponible(this.tiempoDisponible - producto.getTiempo());

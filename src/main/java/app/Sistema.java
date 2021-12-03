@@ -13,13 +13,17 @@ import model.Promocion;
 import model.Sugerible;
 import model.Ticket;
 import model.Usuario;
+import services.AtraccionService;
+import services.PromocionService;
+import services.TicketService;
+import services.UsuarioService;
 
 public class Sistema {
 
-    private	static PromocionController pC = new PromocionController();
-    private static AtraccionController aC = new AtraccionController();
-    private static TicketController tC = new TicketController();
-    private static UsuarioController uC = new UsuarioController();
+    private	static PromocionService pC = new PromocionService();
+    private static AtraccionService aC = new AtraccionService();
+    private static TicketService tC = new TicketService();
+    private static UsuarioService uC = new UsuarioService();
 	private static ArrayList<Usuario> usuarios;
 	private static ArrayList<Atraccion> atracciones;
 	private static ArrayList<Promocion> promociones;
@@ -83,15 +87,15 @@ public class Sistema {
 		
 		for (Promocion p : Sistema.getPromociones()) {
 			if (verificarSugerible(p, ticket)) {
-				System.out.println("Le sugerimos la siguiente Promoción:");
+				System.out.println("Le sugerimos la siguiente Promociï¿½n:");
 				System.out.println(SistemaFront.mostrarSugerible(p));
-				System.out.println("¿Desea comprar " + p.getNombre() + "?");
+				System.out.println("ï¿½Desea comprar " + p.getNombre() + "?");
 				if (ingreso.next().toUpperCase().equals(RESPUESTA_SI)) {
 					System.out.println("Acaba de comprar: " + p.getNombre());
 					u.comprar(p, ticket);
 					
 				}
-				System.out.println("¿Desea seguir?");
+				System.out.println("ï¿½Desea seguir?");
 				if (ingreso.next().toUpperCase().equals(RESPUESTA_NO)) {
 					break;
 				}
@@ -100,14 +104,14 @@ public class Sistema {
 		
 		for (Atraccion a : Sistema.getAtracciones()) {
 			if (verificarSugerible(a, ticket)) {
-				System.out.println("Le sugerimos la siguiente Atracción:");
+				System.out.println("Le sugerimos la siguiente Atracciï¿½n:");
 				System.out.println(SistemaFront.mostrarSugerible(a));
-				System.out.println("¿Desea comprar " + a.getNombre() + "?");
+				System.out.println("ï¿½Desea comprar " + a.getNombre() + "?");
 				if (ingreso.next().toUpperCase().equals(RESPUESTA_SI)) {
 					System.out.println("Acaba de comprar: " + a.getNombre());
 					u.comprar(a, ticket);
 				}
-				System.out.println("¿Desea seguir?");
+				System.out.println("ï¿½Desea seguir?");
 				if (ingreso.next().toUpperCase().equals(RESPUESTA_NO)) {
 					break;
 				}
@@ -120,7 +124,7 @@ public class Sistema {
 			actualizarDatos();
 		} else {
 			System.out.println("");
-			System.out.println("No se pudo efectuar la compra... ¡¡¡Gracias por visitar Turismo en la Tierra Media!!!");
+			System.out.println("No se pudo efectuar la compra... ï¿½ï¿½ï¿½Gracias por visitar Turismo en la Tierra Media!!!");
 		}
 		
 		ingreso.close();

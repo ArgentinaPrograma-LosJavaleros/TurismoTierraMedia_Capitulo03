@@ -6,8 +6,8 @@ import java.sql.SQLException;
 import java.util.Collections;
 import java.util.Scanner;
 
-import jdbc.ConnectionProvider;
 import model.Usuario;
+import persistence.commons.ConnectionProvider;
 
 public class App {
 
@@ -42,6 +42,6 @@ public class App {
 		input.close();
 		
 		ConnectionProvider.closeConnection();
-		System.out.println("Gracias por utilizar nuestro Sistema :) © JAVALEROS");
+		System.out.println("Gracias por utilizar nuestro Sistema :) ï¿½ JAVALEROS");
 	}
 }
