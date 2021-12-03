@@ -1,4 +1,4 @@
 .settings
 target
 *.properties
-src/main/resources
+/src/main/resources/env.properties
