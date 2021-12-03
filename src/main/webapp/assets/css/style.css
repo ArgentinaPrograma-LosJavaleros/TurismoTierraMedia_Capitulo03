@@ -95,17 +95,18 @@ input {
 
 #btn-ingresar {
     background-color: var(--textColor);
+    color: var(--color-dark);
     margin-top: 25px;
     width: 100%;
+    padding: 4%;
     transition-property: all;
     transition-duration: 0.2s;
     transition-delay: 0s;
 }
 
 #btn-ingresar:hover {
-    background-color: var(--borderColor);
-    color: var(--textColor);
-    padding: 4%;
+    background-color: var(--color-border);
+    color: var(--textColor2);
     transition-property: all;
     transition-duration: 0.2s;
     transition-delay: 0s;

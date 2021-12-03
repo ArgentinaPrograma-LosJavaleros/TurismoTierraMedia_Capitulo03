@@ -13,17 +13,20 @@ import app.Sistema;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet implements Servlet{
-	private static final long serialVersionUID = 1L;
+
+	private static final long serialVersionUID = 2394449831904434113L;
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String user = request.getParameter("user");
 		String pass = request.getParameter("pass");
-		if (user != null && user != "") {
-			request.getSession().setAttribute("usuario", user);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
-			dispatcher.forward(request, response);
-		}
+		
+		request.getSession().setAttribute("usuario", user);
+		
+		//response.sendRedirect("index.jsp");
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+		dispatcher.forward(request, response);
 	}
 
 }

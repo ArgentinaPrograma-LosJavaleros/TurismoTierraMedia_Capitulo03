@@ -4,47 +4,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tierra Media &#x0007C; Inicio</title>
-    <!--FontAwesome-->
-    <script defer src="https://kit.fontawesome.com/0931472a64.js" crossorigin="anonymous"></script>
-    <!--Bootstrap-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <!--CSS-->
-    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <jsp:include page="partials/head.jsp"></jsp:include>
 </head>
 <body>
-    <nav class="shadow-lg navbar nav sticky-top py-2">
-        <div class="container-fluid" >
-            <a href="#" >
-                <img class="nav-logo" src="./assets/img/logo-gradiente.png" alt="Tierra Media">
-            </a>
-            <div class="usuario-stats d-flex flex-row-reverse justify-content-center" >
-                <div class="user-img ml-3">
-                    <img src="./assets/img/fondo-GRANDE.png" alt="">
-                </div>
-
-                <div class="stats d-flex flex-row justify-content-between">
-                    <div class="stats-monedas align-self-center">
-                        <span class="monedas-icono mr-1">
-                            <i class="fas fa-coins"></i>
-                        </span>
-                        <span class="monedas-numero">12250</span>
-                    </div>
-                    <div class="stats-tiempo  align-self-center">
-                        <span class="tiempo-icono mr-1">
-                            <i class="fas fa-clock"></i>
-                        </span>
-                        <span class="tiempo-numero">02:30</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <jsp:include page="partials/navbar.jsp"></jsp:include>
     <section class="container-xl pt-2 min-vh-100">
-        <section class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 pt-4 " >
+        <section class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4 pt-4 " >
         	<c:forEach begin = "1" end = "10">
 	            <article class="px-3 pb-5">
 	                <div class="shadow-lg card border border-info overflow-hidden">
