@@ -68,11 +68,15 @@ public class UsuarioDAOImp implements UsuarioDAO {
 		columnas.add("monedas");
 		columnas.add("tiempo");
 		columnas.add("id_tematica");
+		columnas.add("pass");
+		columnas.add("isAdmin");
 		
 		tipos.add("Int");
 		tipos.add("String");
 		tipos.add("Int");
 		tipos.add("Double");
+		tipos.add("Int");
+		tipos.add("String");
 		tipos.add("Int");
 		
 		values.add(t.getId().toString());
@@ -80,6 +84,11 @@ public class UsuarioDAOImp implements UsuarioDAO {
 		values.add(t.getCantidadMonedas().toString());
 		values.add(t.getTiempoDisponible().toString());
 		values.add(t.getPreferencia().getId().toString());
+		values.add(t.getPass());
+		if (t.getIsAdmin())
+		values.add(String.valueOf(1));
+		else
+		values.add(String.valueOf(0));
 				
 		return CRUD.update("usuarios", columnas, tipos, values, condicion);
 	}
