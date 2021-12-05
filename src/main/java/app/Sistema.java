@@ -17,6 +17,7 @@ import services.AtraccionService;
 import services.PromocionService;
 import services.TicketService;
 import services.UsuarioService;
+import utils.Crypt;
 
 public class Sistema {
 
@@ -45,14 +46,22 @@ public class Sistema {
 		promociones = _promociones;
 	}
 
-	public static boolean login(Usuario usuarioLogin) {
+	public static boolean login(Usuario usuarioLogin, String pass) {
+		Boolean val = true;
+		
 		try {
 			usuarioActual = getUsuarios().get(getUsuarios().indexOf(usuarioLogin));
 		} catch (IndexOutOfBoundsException iobe) {
-			System.out.println("El usuario actual no existe");
-			return false;
+			System.out.println("El usuario actual no existe.");
+			val = false;
 		}
-		return true;
+		
+		if(!Crypt.match(pass, usuarioActual.getPass())) {
+			System.out.println("La contraseña es incorrecta.");
+			val = false;
+		}
+		
+		return val;
 	}
 
 	// --------------------------------------------------------------------------

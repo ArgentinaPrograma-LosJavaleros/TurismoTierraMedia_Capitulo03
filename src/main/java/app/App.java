@@ -25,7 +25,7 @@ public class App {
 			System.out.println("");
 			System.out.print("Ingrese su Nombre de Usuario: ");
 			String nombre = input.nextLine();
-			existe = Sistema.login(new Usuario(nombre));
+			//existe = Sistema.login(new Usuario(nombre));
 		} while (!existe);
 
 		System.out.println("");

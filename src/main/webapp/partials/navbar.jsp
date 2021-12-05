@@ -20,6 +20,12 @@
 					<span class="tiempo-icono mr-1"> <i class="fas fa-clock"></i>
 					</span> <span class="tiempo-numero">02:30</span>
 				</div>
+				<div>
+				<form method="post" action="logout">
+					<button class="btn btn-outline-danger"><i class="fas fa-sign-out-alt"></i> Logout </button>
+				</form>
+				</div>
+				
 			</div>
 		</div>
 	</div>

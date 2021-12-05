@@ -1,3 +1,4 @@
 .settings
-target
-/src/main/resources/env.properties
+*/target/**
+src/main/resources/**
+/target/
