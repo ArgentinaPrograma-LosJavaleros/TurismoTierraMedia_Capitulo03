@@ -13,6 +13,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import model.Usuario;
+import utils.Crypt;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet implements Servlet{
@@ -24,6 +25,8 @@ public class LoginServlet extends HttpServlet implements Servlet{
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String user = request.getParameter("user");
 		String pass = request.getParameter("pass");
+//		System.out.println(Crypt.hash(pass));
+		
 		try {
 			Sistema.cargarDatos();
 		} catch (SQLException | NoExisteTematicaException e) {
@@ -31,7 +34,7 @@ public class LoginServlet extends HttpServlet implements Servlet{
 			e.printStackTrace();
 		}
 		
-		if(Sistema.login(new Usuario(user))) {			
+		if(Sistema.login(new Usuario(user), pass)) {			
 			request.getSession().setAttribute("usuario", Sistema.getUsuarioActual().getNombre());
 			
 			//response.sendRedirect("index.jsp");

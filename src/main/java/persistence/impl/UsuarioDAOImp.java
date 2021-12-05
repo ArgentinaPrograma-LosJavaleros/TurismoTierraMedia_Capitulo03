@@ -126,10 +126,12 @@ public class UsuarioDAOImp implements UsuarioDAO {
 		
 		while (rs.next())
 			listaDeUsuarios.add(new Usuario(rs.getInt("id_usuario"), 
-										rs.getString("nombre"), 
+										rs.getString("nombre"),
+										rs.getString("pass"),
 										rs.getInt("monedas"),
 										rs.getDouble("tiempo"),
-										tematica.findById(rs.getInt("id_tematica"))));		
+										tematica.findById(rs.getInt("id_tematica")),
+										rs.getBoolean("isAdmin")));		
 		
 		return listaDeUsuarios;
 	}

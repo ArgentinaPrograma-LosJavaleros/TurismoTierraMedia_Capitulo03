@@ -54,8 +54,8 @@ public class Archivo {
 
 				// A�ade al usuario al arraylist de usuarios con su nombre, monedas, tiempo y
 				// tem�tica preferida.
-				usuarios.add(new Usuario(0,valores[0], monedas, tiempo, tematica.
-						findBy("nombre", "=", "\"" + (valores[3]) + "\"")));
+//				usuarios.add(new Usuario(0,valores[0], monedas, tiempo, tematica.
+//						findBy("nombre", "=", "\"" + (valores[3]) + "\"")));
 				//new Tematica(Integer.valueOf(valores[3]))
 			}
 

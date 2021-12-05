@@ -13,20 +13,24 @@ public class Usuario implements Comparable<Usuario>{
 	private Integer cantidadMonedas;
 	private Double tiempoDisponible;
 	private Tematica preferencia;
+	private String pass;
+	private Boolean isAdmin;
 	
 	// Constructores
 	//--------------------------------------------------------------------------
-	public Usuario(Integer id,String nombre, Integer cantidadMonedas, Double tiempoDisponible,
-			Tematica preferencia) {
+	public Usuario(Integer id,String nombre, String pass, Integer cantidadMonedas, Double tiempoDisponible,
+			Tematica preferencia, Boolean isAdmin) {
 		setId(id);
 		setNombre(nombre);
+		setPass(pass);
 		setCantidadMonedas(cantidadMonedas);
 		setTiempoDisponible(tiempoDisponible);
 		setPreferencia(preferencia);
+		setIsAdmin(isAdmin);
 	}
 	
 	public Usuario(String nombre) {
-		this(0, nombre, null, null, null);
+		this(0, nombre, null, null, null, null, false);
 	}
 	
 	// Setters
@@ -51,6 +55,14 @@ public class Usuario implements Comparable<Usuario>{
 		this.preferencia = preferencia;
 	}
 	
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
+	
+	public void setIsAdmin(Boolean isAdmin) {
+		this.isAdmin = isAdmin;
+	}
+	
 	// Getters
 	//--------------------------------------------------------------------------
 	public Integer getId() {
@@ -73,7 +85,15 @@ public class Usuario implements Comparable<Usuario>{
 		return this.preferencia;
 	}
 	
-	// M�todos
+	public String getPass() {
+		return pass;
+	}
+	
+	public Boolean getIsAdmin() {
+		return isAdmin;
+	}
+	
+	// Métodos
 	//--------------------------------------------------------------------------
 	@Override
 	public String toString() {
