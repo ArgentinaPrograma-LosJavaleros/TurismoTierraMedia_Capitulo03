@@ -10,20 +10,21 @@
 			<div class="user-img ms-3 ">
 				<img src="/TurismoTierraMedia_Capitulo03/assets/img/fondo-GRANDE.png" alt="">
 			</div>
-
+			<span>${usuario}</span>
 			<div class="stats d-flex flex-row justify-content-between">
 				<div class="stats-monedas align-self-center">
 					<span class="monedas-icono mr-1"> <i class="fas fa-coins"></i>
-					</span> <span class="monedas-numero">12250</span>
+					</span> <span class="monedas-numero">${monedas}</span>
 				</div>
 				<div class="stats-tiempo  align-self-center">
 					<span class="tiempo-icono mr-1"> <i class="fas fa-clock"></i>
-					</span> <span class="tiempo-numero">02:30</span>
+					</span> <span class="tiempo-numero">${tiempo}</span>
 				</div>
+				
 				<div>
-				<form method="post" action="logout">
-					<button class="btn btn-outline-danger"><i class="fas fa-sign-out-alt"></i> Logout </button>
-				</form>
+					<form method="post" action="logout">
+						<button class="btn btn-outline-danger"><i class="fas fa-sign-out-alt"></i> Logout </button>
+					</form>
 				</div>
 				
 			</div>

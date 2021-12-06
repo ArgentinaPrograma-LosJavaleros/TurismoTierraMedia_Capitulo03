@@ -9,6 +9,7 @@
 <body>
     <jsp:include page="/partials/navbar.jsp"></jsp:include>
     <section class="container-xl pt-2 min-vh-100">
+    	
         <section class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4 pt-4 " >
         	<c:forEach items="${atracciones}" var="atraccion">
 	            <article class="px-3 pb-5">

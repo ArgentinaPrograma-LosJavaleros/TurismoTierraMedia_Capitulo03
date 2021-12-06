@@ -214,7 +214,7 @@ img.nav-logo {
     text-overflow: ellipsis;
     overflow: hidden;
 }
-
+/*
 #carrusel {
 	padding: 5px;
 }
@@ -222,7 +222,7 @@ img.nav-logo {
 #carrusel > .card {
 	width: 48%;
 	margin: auto;
-}
+}*/
 
 .nav-link {
 	color: var(--textColor2);
