@@ -8,62 +8,66 @@
     </div>
     <div class="carousel-inner container" >
         <div class="carousel-item container active">
-            <div class="row row-cols-2 align-items-start" id="carrusel">
-            	<c:forEach items="${promociones}" var="promocion" end="1">            	
-	                <div class="shadow-lg card border border-info overflow-hidden">
-	                    <div class="">
-	                        <img class="card-img-top" src="./assets/img/img-test-atraccion.png" alt="" />
-	                    </div>
-	                    <div class="card-body p-3">
-	                        <div class="d-flex justify-content-between">                        
-		                        <h5 class="card-title mb-3 fs-5 me-5">${promocion.nombre}</h5>
-		                        <div class="stats d-flex flex-row mb-4">
-		                            <div class="stats-monedas align-self-center me-2">
-		                                <span class="monedas-icono mr-2"> 
-		                                	<i class="fas fa-coins"></i> 
-		                                </span> 
-		                                <span class="monedas-numero">${promocion.costo}</span>
-		                            </div>
-		                            <div class="stats-tiempo align-self-center">
-		                                <span class="tiempo-icono mr-2"> 
-		                                	<i class="fas fa-clock"></i> 
-		                                </span> 
-		                                <span class="tiempo-numero">${promocion.tiempo}</span>
-		                            </div>
+            <div class="row row-cols-2 g-2">
+            	<c:forEach items="${promociones}" var="promocion" end="1">   
+            		<div class="col">         	
+		                <div class=" shadow-lg card border border-info overflow-hidden">
+		                    <div class="">
+		                        <img class="card-img-top card-img-carrusel" src="./assets/img/img-test-atraccion.png" alt="" />
+		                    </div>
+		                    <div class="card-body px-2 py-2">
+		                        <div class="d-flex justify-content-between">                        
+			                        <h5 class="card-title fs-5">${promocion.nombre}</h5>
+			                        <div class="stats d-flex flex-row">
+			                            <div class="stats-monedas align-self-center me-2">
+			                                <span class="monedas-icono mr-2"> 
+			                                	<i class="fas fa-coins"></i> 
+			                                </span> 
+			                                <span class="monedas-numero">${promocion.costo}</span>
+			                            </div>
+			                            <div class="stats-tiempo align-self-center">
+			                                <span class="tiempo-icono mr-2"> 
+			                                	<i class="fas fa-clock"></i> 
+			                                </span> 
+			                                <span class="tiempo-numero">${promocion.tiempo}</span>
+			                            </div>
+			                        </div>
 		                        </div>
-	                        </div>
-	                    </div>
+		                    </div>
+		                </div>
 	                </div>
             	</c:forEach>     
             </div>
         </div>
         
         <div class="carousel-item container">
-            <div class="row row-cols-2 align-items-start" id="carrusel">
-            	<c:forEach items="${atracciones}" var="atraccion" end="1">            	
-	                <div class="shadow-lg card border border-info overflow-hidden">
-	                    <div class="">
-	                        <img class="card-img-top" src="./assets/img/img-test-atraccion.png" alt="" />
-	                    </div>
-	                    <div class="card-body p-3">
-	                        <div class="d-flex justify-content-between">                        
-		                        <h5 class="card-title mb-3 fs-5 me-5">${atraccion.nombre}</h5>
-		                        <div class="stats d-flex flex-row mb-4">
-		                            <div class="stats-monedas align-self-center me-2">
-		                                <span class="monedas-icono mr-2"> 
-		                                	<i class="fas fa-coins"></i> 
-		                                </span> 
-		                                <span class="monedas-numero">${atraccion.costo}</span>
-		                            </div>
-		                            <div class="stats-tiempo align-self-center">
-		                                <span class="tiempo-icono mr-2"> 
-		                                	<i class="fas fa-clock"></i> 
-		                                </span> 
-		                                <span class="tiempo-numero">${atraccion.tiempo}</span>
-		                            </div>
+            <div class="row row-cols-2 g-2">
+            	<c:forEach items="${atracciones}" var="atraccion" end="1">   
+            		<div class="col">         	
+		                <div class=" shadow-lg card border border-info overflow-hidden">
+		                    <div class="">
+		                        <img class="card-img-top card-img-carrusel" src="./assets/img/img-test-atraccion.png" alt="" />
+		                    </div>
+		                    <div class="card-body px-2 py-2">
+		                        <div class="d-flex justify-content-between">                        
+			                        <h5 class="card-title fs-5">${atraccion.nombre}</h5>
+			                        <div class="stats d-flex flex-row">
+			                            <div class="stats-monedas align-self-center me-2">
+			                                <span class="monedas-icono mr-2"> 
+			                                	<i class="fas fa-coins"></i> 
+			                                </span> 
+			                                <span class="monedas-numero">${atraccion.costo}</span>
+			                            </div>
+			                            <div class="stats-tiempo align-self-center">
+			                                <span class="tiempo-icono mr-2"> 
+			                                	<i class="fas fa-clock"></i> 
+			                                </span> 
+			                                <span class="tiempo-numero">${atraccion.tiempo}</span>
+			                            </div>
+			                        </div>
 		                        </div>
-	                        </div>
-	                    </div>
+		                    </div>
+		                </div>
 	                </div>
             	</c:forEach>     
             </div>

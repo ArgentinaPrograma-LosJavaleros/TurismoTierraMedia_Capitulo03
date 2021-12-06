@@ -10,7 +10,7 @@
 			<div class="user-img ms-3 ">
 				<img src="/TurismoTierraMedia_Capitulo03/assets/img/fondo-GRANDE.png" alt="">
 			</div>
-			<span>${usuario}</span>
+			<span class="text-color-light">${usuario}</span>
 			<div class="stats d-flex flex-row justify-content-between">
 				<div class="stats-monedas align-self-center">
 					<span class="monedas-icono mr-1"> <i class="fas fa-coins"></i>

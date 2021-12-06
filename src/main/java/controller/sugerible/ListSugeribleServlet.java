@@ -40,9 +40,6 @@ public class ListSugeribleServlet extends HttpServlet implements Servlet {
 			req.setAttribute("atracciones", this.atraccionService.findAll());
 			req.setAttribute("promociones", this.promocionService.findAll());
 			
-			System.out.println(this.atraccionService.findAll());
-			System.out.println(this.promocionService.findAll());
-			
 			RequestDispatcher disp = getServletContext().getRequestDispatcher("/home.jsp");
 			disp.forward(req, res);
 			

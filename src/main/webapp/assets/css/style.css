@@ -7,14 +7,17 @@
     --color-light: #E9F8FF;
     --color-border: #007BC6;
     --inputColor: #2D3A4A;
+    --color-gray-dark: #526C8C;
     --shadowColor: #000000;
     --color-gold: #D0A85C;
     --color-green: #85F279;
     --color-body-bg: linear-gradient(254.12deg, #002650 0%, #061D26 100%);
     --fullShadow: 0px 0px 15px 4px var(--shadowColor);
     
-    --border-radius-card: 10pt;
-    --border-radius-buttons: 7pt;
+    --hover-color-nav-link: rgba(82, 108, 140, 0.3);
+    
+    --border-radius-card: 8pt;
+    --border-radius-buttons: 5pt;
 }
 
 /*-----------------------------------------------------*/
@@ -33,6 +36,10 @@ input {
 /*-----------------------------------------------------*/
 /*                        INDEX                        */
 /*-----------------------------------------------------*/
+
+.text-color-light {
+	color: var(--color-light);
+}
 
 #logo-index {
 	width: 80px;
@@ -131,6 +138,7 @@ input {
 body {
     background: var(--color-body-bg);
     user-select: none;
+    padding: 0;
 }
 
 nav.nav {
@@ -214,6 +222,9 @@ img.nav-logo {
     text-overflow: ellipsis;
     overflow: hidden;
 }
+
+
+
 /*
 #carrusel {
 	padding: 5px;
@@ -226,8 +237,24 @@ img.nav-logo {
 
 .nav-link {
 	color: var(--textColor2);
+	border-bottom: 4px solid transparent;
 }
 
 .nav-link:hover {
 	color: var(--textColor);
+	border-radius: 0;
+	border-color: var(--hover-color-nav-link);
+	background-color: var(--hover-color-nav-link);
+    isolation: isolate;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid var(--color-gray-dark);
+}
+
+.nav-tabs .nav-link.active{
+	background-color: rgba(0,0,0,0);
+	border: transparent;
+	border-bottom: 4px solid var(--textColor);
+	color: var(--color-light);
 }

@@ -11,7 +11,7 @@
 						alt="">
 				</div>
 				<div class="card-body p-3">
-					<h5 class="card-title mb-3 fs-5">
+					<h5 class="card-title mb-3 fs-5 text-nowrap">
 						<c:out value="${atraccion.nombre}"></c:out>
 					</h5>
 					<div class="stats d-flex flex-row justify-content-between mb-4">
