@@ -128,13 +128,10 @@ input {
 /*-----------------------------------------------------*/
 /*-----------------------------------------------------*/
 
-
-
 body {
     background: var(--color-body-bg);
     user-select: none;
 }
-
 
 nav.nav {
     height: auto;
@@ -211,4 +208,26 @@ img.nav-logo {
 
 .card .card-body .card-title {
     color: var(--color-light);
+    height: 20px;
+    max-width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#carrusel {
+	padding: 5px;
+}
+
+#carrusel > .card {
+	width: 48%;
+	margin: auto;
+}
+
+.nav-link {
+	color: var(--textColor2);
+}
+
+.nav-link:hover {
+	color: var(--textColor);
 }
