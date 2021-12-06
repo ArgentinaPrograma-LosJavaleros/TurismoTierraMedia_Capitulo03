@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -8,7 +9,7 @@
     <div class="carousel-inner container" >
         <div class="carousel-item container active">
             <div class="row row-cols-2 align-items-start" id="carrusel">
-            	<c:foreach items="${promociones}" var="promocion" end="1">            	
+            	<c:forEach items="${promociones}" var="promocion" end="1">            	
 	                <div class="shadow-lg card border border-info overflow-hidden">
 	                    <div class="">
 	                        <img class="card-img-top" src="./assets/img/img-test-atraccion.png" alt="" />
@@ -33,13 +34,13 @@
 	                        </div>
 	                    </div>
 	                </div>
-            	</c:foreach>     
+            	</c:forEach>     
             </div>
         </div>
         
         <div class="carousel-item container">
             <div class="row row-cols-2 align-items-start" id="carrusel">
-            	<c:foreach items="${atracciones}" var="atraccion" end="1">            	
+            	<c:forEach items="${atracciones}" var="atraccion" end="1">            	
 	                <div class="shadow-lg card border border-info overflow-hidden">
 	                    <div class="">
 	                        <img class="card-img-top" src="./assets/img/img-test-atraccion.png" alt="" />
@@ -52,7 +53,7 @@
 		                                <span class="monedas-icono mr-2"> 
 		                                	<i class="fas fa-coins"></i> 
 		                                </span> 
-		                                <span class="monedas-numero">${atraccion.monedas}</span>
+		                                <span class="monedas-numero">${atraccion.costo}</span>
 		                            </div>
 		                            <div class="stats-tiempo align-self-center">
 		                                <span class="tiempo-icono mr-2"> 
@@ -64,7 +65,7 @@
 	                        </div>
 	                    </div>
 	                </div>
-            	</c:foreach>     
+            	</c:forEach>     
             </div>
         </div>
         
