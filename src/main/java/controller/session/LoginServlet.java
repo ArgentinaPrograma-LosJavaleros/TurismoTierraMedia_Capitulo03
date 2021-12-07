@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet implements Servlet{
 		String user = request.getParameter("user");
 		String pass = request.getParameter("pass");
 		
-		System.out.println(Crypt.hash(pass));
+	//	System.out.println(Crypt.hash(pass));
 		
 		try {
 			Sistema.cargarDatos();
@@ -53,7 +53,7 @@ public class LoginServlet extends HttpServlet implements Servlet{
 			request.getSession().setAttribute("tiempo", Sistema.getUsuarioActual().getTiempoDisponible());
 			//response.sendRedirect("index.jsp");
 			
-			RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("home.do");
 			dispatcher.forward(request, response);
 		}
 	}

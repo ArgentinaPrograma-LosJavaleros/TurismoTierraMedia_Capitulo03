@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <jsp:include page="partials/head.jsp"></jsp:include>
 </head>
