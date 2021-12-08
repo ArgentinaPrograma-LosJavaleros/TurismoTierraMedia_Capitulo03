@@ -55,6 +55,11 @@ public class LoginServlet extends HttpServlet implements Servlet{
 			
 			RequestDispatcher dispatcher = request.getRequestDispatcher("home.do");
 			dispatcher.forward(request, response);
+		}else {
+			request.setAttribute("error","Usuario y/o Contraseña incorrectos");
+						
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
+			dispatcher.forward(request, response);
 		}
 	}
 
