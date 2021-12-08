@@ -40,6 +40,7 @@ public class PromocionServlet extends HttpServlet implements Servlet {
 			Gson gson = gsonbuilder.create();
 			
 			json = gson.toJson(this.promocionService.findById(Integer.parseInt(id)));
+			res.setContentType("application/json");
 			res.getOutputStream().println(json);
 			
 		} catch (SQLException e) {
