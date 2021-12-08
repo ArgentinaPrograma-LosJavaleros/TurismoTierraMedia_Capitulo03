@@ -12,6 +12,11 @@
 	rel="stylesheet">
 <script defer
 	src="/TurismoTierraMedia_Capitulo03/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-	
+<!-- SweetAlert2 -->
+<script defer
+	src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script defer
+	src="/TurismoTierraMedia_Capitulo03/assets/js/popups.js">
+</script> 
 <!--CSS-->
 <link rel="stylesheet" href="/TurismoTierraMedia_Capitulo03/assets/css/style.css" />
