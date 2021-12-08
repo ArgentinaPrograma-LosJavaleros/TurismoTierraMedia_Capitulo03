@@ -33,6 +33,11 @@ public class ListSugeribleServlet extends HttpServlet implements Servlet {
 	}
 	
 	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		this.doPost(req, resp);
+	}
+	
+	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
 		try {

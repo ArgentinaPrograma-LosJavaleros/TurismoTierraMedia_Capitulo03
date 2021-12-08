@@ -27,7 +27,7 @@
 						</div>
 					</div>
 					<div class="btn-container d-flex flex-column">
-						<button class="btn btn-outline-primary mb-3 py-2" value-id="${promocion.id}">MAS
+						<button class="btn-mas-info btn btn-outline-primary mb-3 py-2" value="promocion-${promocion.id}">MAS
 							INFO...
 						</button>
 						<button class="btn btn-primary py-2">COMPRAR</button>

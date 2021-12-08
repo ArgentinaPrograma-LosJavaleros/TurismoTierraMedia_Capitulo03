@@ -3,13 +3,9 @@
 <head>
     <jsp:include page="partials/head.jsp"></jsp:include>
 </head>
-
 <body>
-
     <div class="contenedor" id="imagen" >
-    
         <div class="container-flex d-flex flex-column" id="formulario" >
-    
             <div id="logo-contenedor">
                 <img src="./assets/img/logo-gradiente.png" alt="Tierra Media" id="logo">
             </div>
@@ -51,9 +47,6 @@
                 &#x000A9; JAVALEROS (2021)                    
             </strong>
         </div>
-
     </div>
-
 </body>
-
 </html>
