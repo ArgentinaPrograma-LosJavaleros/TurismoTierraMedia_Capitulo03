@@ -3,19 +3,21 @@ package model;
 public class Atraccion extends Sugerible {
 
 	private Integer cupoUsuarios;
-
+	private String descripcion;
+	
 	public Atraccion(Integer idAtraccion,String nombreAtraccion, Integer costoAtraccion, Double tiempoAtraccion, Integer cupoUsuarios,
-			Tematica tematicaAtraccion) {
+			Tematica tematicaAtraccion, String descripcion) {
 		super.setId(idAtraccion);
 		super.setNombre(nombreAtraccion);
 		super.setCosto(costoAtraccion);
 		super.setTiempo(tiempoAtraccion);
 		super.setTematica(tematicaAtraccion);
-		setCupoUsuarios(cupoUsuarios);
+		this.setCupoUsuarios(cupoUsuarios);
+		this.setDescripcion(descripcion);
 	}
 
 	public Atraccion(String nombreAtraccion) {
-		this(0, nombreAtraccion, null, null, null, null);
+		this(0, nombreAtraccion, null, null, null, null, null);
 	}
 
 	public void setCupoUsuarios(Integer cupoUsuarios) {
@@ -29,9 +31,9 @@ public class Atraccion extends Sugerible {
 	@Override
 	public String toString() {
 		System.out.printf(
-				"| Nombre = %-35s" + "| Costo = %-5d" + "| Tiempo = %-5.1f" + "| Cupo = %-5d" + "| Temática = %-15s |",
+				"| Nombre = %-35s" + "| Costo = %-5d" + "| Tiempo = %-5.1f" + "| Cupo = %-5d" + "| Temï¿½tica = %-15s |" + "| Descripcion = %-15s |",
 				super.getNombre(), super.getCosto(), super.getTiempo(), getCupoUsuarios(),
-				getTematica());
+				getTematica(), this.getDescripcion());
 		return "";
 	}
 
@@ -53,6 +55,14 @@ public class Atraccion extends Sugerible {
 			return 1;
 		
 		return 0;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 	
 	

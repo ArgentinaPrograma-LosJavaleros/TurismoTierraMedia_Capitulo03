@@ -44,19 +44,22 @@ public class AtraccionDAOImp implements AtraccionDAO {
 		columnas.add("tiempo");
 		columnas.add("costo");
 		columnas.add("id_tematica");
+		columnas.add("descripcion");
 		
 		tipos.add("String");
 		tipos.add("Int");
 		tipos.add("Double");
 		tipos.add("Int");
 		tipos.add("Int");
+		tipos.add("String");
 		
 		values.add(t.getNombre());
 		values.add(t.getCupoUsuarios().toString());
 		values.add(t.getTiempo().toString());
 		values.add(t.getCosto().toString());
 		values.add(t.getTematica().getId().toString());
-				
+		values.add(t.getDescripcion());
+		
 		return CRUD.insert("atracciones", columnas, tipos, values);
 	}
 
@@ -73,6 +76,8 @@ public class AtraccionDAOImp implements AtraccionDAO {
 		columnas.add("tiempo");
 		columnas.add("costo");
 		columnas.add("id_tematica");
+		columnas.add("descripcion");
+		
 		
 		tipos.add("Int");
 		tipos.add("String");
@@ -80,6 +85,7 @@ public class AtraccionDAOImp implements AtraccionDAO {
 		tipos.add("Double");
 		tipos.add("Int");
 		tipos.add("Int");
+		tipos.add("String");
 		
 		values.add(t.getId().toString());
 		values.add(t.getNombre());
@@ -87,6 +93,7 @@ public class AtraccionDAOImp implements AtraccionDAO {
 		values.add(t.getTiempo().toString());
 		values.add(t.getCosto().toString());
 		values.add(t.getTematica().getId().toString());
+		values.add(t.getDescripcion());
 		
 		return CRUD.update("atracciones", columnas, tipos, values, condicion);
 	}
@@ -113,6 +120,7 @@ public class AtraccionDAOImp implements AtraccionDAO {
 			atraccion.setCosto(rs.getInt("costo"));
 			atraccion.setTiempo(rs.getDouble("tiempo"));
 			atraccion.setTematica(tematica.findById(rs.getInt("id_tematica")));		
+			atraccion.setDescripcion(rs.getString("descripcion"));
 		}
 		return atraccion;
 	}
@@ -131,11 +139,12 @@ public class AtraccionDAOImp implements AtraccionDAO {
 		ResultSet rs = CRUD.select("atracciones", "*", condicion);
 		while (rs.next())
 		listaDeAtraccions.add(new Atraccion(rs.getInt("id_Atraccion"), 
-										rs.getString("nombre"),
-										rs.getInt("costo"),
-										rs.getDouble("tiempo"),
-										rs.getInt("cupos"),
-										tematica.findById(rs.getInt("id_tematica"))));			
+											rs.getString("nombre"),
+											rs.getInt("costo"),
+											rs.getDouble("tiempo"),
+											rs.getInt("cupos"),
+											tematica.findById(rs.getInt("id_tematica")),
+											rs.getString("descripcion")));			
 		
 		
 		return listaDeAtraccions;

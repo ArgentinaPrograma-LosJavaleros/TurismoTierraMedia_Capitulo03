@@ -13,23 +13,91 @@ $(document).on('click', '.btn-mas-info', function () {
 		cache: false,
 		dataType: 'json',
 		success: function(res){
-
-			Swal.fire({
-				title: res.nombre,
-				text: `La descripcion`,
-				imageUrl: '/TurismoTierraMedia_Capitulo03/assets/img/img-test-atraccion.png',
-				showCancelButton: true,
-				confirmButtonText: 'Comprar',
-				cancelButtonText: 'Cancelar',
-				reverseButtons: true
-			}).then((result) => {
-				if (result.isConfirmed) {
-
-				} else if (result.dismiss === Swal.DismissReason.cancel) {
-					
+			
+			if(tipo === 'promocion'){
+				
+				let atracciones = '<ul class="list-group list-group-flush">';
+				for(let i = 0; i < res.atracciones.length; i++){
+					atracciones += `<li class="list-group-item text-start">${res.atracciones[i].nombre}</li>`;
 				}
-			});
-
+				atracciones += '</ul>'
+	
+				Swal.fire({
+					title: res.nombre,
+					html: `
+						<div class="stats d-flex flex-row mb-4">
+							<div class="stats-monedas align-self-center me-3">
+								<span class="monedas-icono me-1"> 
+									<i class="fas fa-coins fa-lg"></i>
+								</span> 
+								<span class="monedas-numero fs-5">
+										${res.costo}
+								</span>
+							</div>
+							<div class="stats-tiempo  align-self-center">
+								<span class="tiempo-icono me-1 fa-lg"> 
+									<i class="fas fa-clock"></i>
+								</span> 
+								<span class="tiempo-numero fs-5"> 
+									${res.tiempo}
+								</span>
+							</div>
+						</div>
+						La Promocion incluye :
+						${atracciones}
+					`,
+					imageUrl: '/TurismoTierraMedia_Capitulo03/assets/img/img-test-atraccion.png',
+					showCancelButton: true,
+					confirmButtonText: 'Comprar',
+					cancelButtonText: 'Cancelar',
+					reverseButtons: true
+				}).then((result) => {
+					if (result.isConfirmed) {
+	
+					} else if (result.dismiss === Swal.DismissReason.cancel) {
+						
+					}
+				});
+				
+			}else {
+				Swal.fire({
+					title: res.nombre,
+					html: `
+						<div class="stats d-flex flex-row mb-4">
+							<div class="stats-monedas align-self-center me-3">
+								<span class="monedas-icono me-1"> 
+									<i class="fas fa-coins fa-lg"></i>
+								</span> 
+								<span class="monedas-numero fs-5">
+										${res.costo}
+								</span>
+							</div>
+							<div class="stats-tiempo  align-self-center">
+								<span class="tiempo-icono me-1 fa-lg"> 
+									<i class="fas fa-clock"></i>
+								</span> 
+								<span class="tiempo-numero fs-5"> 
+									${res.tiempo}
+								</span>
+							</div>
+						</div>
+						<div class="text-start">
+							${res.descripcion === undefined ?  '' : res.descripcion}	
+						</div>
+					`,
+					imageUrl: '/TurismoTierraMedia_Capitulo03/assets/img/img-test-atraccion.png',
+					showCancelButton: true,
+					confirmButtonText: 'Comprar',
+					cancelButtonText: 'Cancelar',
+					reverseButtons: true
+				}).then((result) => {
+					if (result.isConfirmed) {
+	
+					} else if (result.dismiss === Swal.DismissReason.cancel) {
+						
+					}
+				});
+			}
 		}
 	});
 });

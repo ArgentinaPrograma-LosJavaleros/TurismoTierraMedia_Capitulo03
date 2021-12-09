@@ -40,6 +40,7 @@ public class AtraccionServlet extends HttpServlet implements Servlet {
 			Gson gson = gsonbuilder.create();
 			
 			json = gson.toJson(this.atraccionService.findById(Integer.parseInt(id)));
+			
 			res.setContentType("application/json");
 			res.getOutputStream().println(json);
 			

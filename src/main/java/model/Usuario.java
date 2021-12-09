@@ -15,11 +15,12 @@ public class Usuario implements Comparable<Usuario>{
 	private Tematica preferencia;
 	private String pass;
 	private Boolean isAdmin;
+	private Boolean activo;
 	
 	// Constructores
 	//--------------------------------------------------------------------------
 	public Usuario(Integer id,String nombre, String pass, Integer cantidadMonedas, Double tiempoDisponible,
-			Tematica preferencia, Boolean isAdmin) {
+			Tematica preferencia, Boolean isAdmin, Boolean activo) {
 		setId(id);
 		setNombre(nombre);
 		setPass(pass);
@@ -27,10 +28,11 @@ public class Usuario implements Comparable<Usuario>{
 		setTiempoDisponible(tiempoDisponible);
 		setPreferencia(preferencia);
 		setIsAdmin(isAdmin);
+		setActivo(activo);
 	}
 	
 	public Usuario(String nombre) {
-		this(0, nombre, null, null, null, null, false);
+		this(0, nombre, null, null, null, null, false, false);
 	}
 	
 	// Setters
@@ -63,6 +65,11 @@ public class Usuario implements Comparable<Usuario>{
 		this.isAdmin = isAdmin;
 	}
 	
+	
+	public void setActivo(Boolean activo) {
+		this.activo = activo;
+	}
+	
 	// Getters
 	//--------------------------------------------------------------------------
 	public Integer getId() {
@@ -92,6 +99,11 @@ public class Usuario implements Comparable<Usuario>{
 	public Boolean getIsAdmin() {
 		return isAdmin;
 	}
+	
+	public Boolean getActivo() {
+		return activo;
+	}
+
 	
 	// Métodos
 	//--------------------------------------------------------------------------
@@ -168,6 +180,8 @@ public class Usuario implements Comparable<Usuario>{
 		}
 		Sistema.actualizarDatos();
 	}
+
+	
 	
 	
 }

@@ -42,16 +42,30 @@ public class UsuarioDAOImp implements UsuarioDAO {
 		columnas.add("monedas");
 		columnas.add("tiempo");
 		columnas.add("id_tematica");
+		columnas.add("isAdmin");
+		columnas.add("activo");
 		
 		tipos.add("String");
 		tipos.add("Int");
 		tipos.add("Double");
+		tipos.add("Int");
+		tipos.add("Int");
 		tipos.add("Int");
 		
 		values.add(t.getNombre());
 		values.add(t.getCantidadMonedas().toString());
 		values.add(t.getTiempoDisponible().toString());
 		values.add(t.getPreferencia().getId().toString());
+
+		if (t.getIsAdmin())
+			values.add(String.valueOf(1));
+		else
+			values.add(String.valueOf(0));
+		
+		if (t.getActivo())
+			values.add(String.valueOf(1));
+		else
+			values.add(String.valueOf(0));
 				
 		return CRUD.insert("usuarios", columnas, tipos, values);
 	}
@@ -70,6 +84,7 @@ public class UsuarioDAOImp implements UsuarioDAO {
 		columnas.add("id_tematica");
 		columnas.add("pass");
 		columnas.add("isAdmin");
+		columnas.add("activo");
 		
 		tipos.add("Int");
 		tipos.add("String");
@@ -77,6 +92,7 @@ public class UsuarioDAOImp implements UsuarioDAO {
 		tipos.add("Double");
 		tipos.add("Int");
 		tipos.add("String");
+		tipos.add("Int");
 		tipos.add("Int");
 		
 		values.add(t.getId().toString());
@@ -86,9 +102,15 @@ public class UsuarioDAOImp implements UsuarioDAO {
 		values.add(t.getPreferencia().getId().toString());
 		values.add(t.getPass());
 		if (t.getIsAdmin())
-		values.add(String.valueOf(1));
+			values.add(String.valueOf(1));
 		else
-		values.add(String.valueOf(0));
+			values.add(String.valueOf(0));
+		
+		if (t.getActivo())
+			values.add(String.valueOf(1));
+		else
+			values.add(String.valueOf(0));
+		
 				
 		return CRUD.update("usuarios", columnas, tipos, values, condicion);
 	}
@@ -114,6 +136,8 @@ public class UsuarioDAOImp implements UsuarioDAO {
 			usuario.setCantidadMonedas(rs.getInt("monedas"));
 			usuario.setTiempoDisponible(rs.getDouble("tiempo"));
 			usuario.setPreferencia(tematica.findById(rs.getInt("id_tematica")));
+			usuario.setIsAdmin(rs.getBoolean("isAdmin"));
+			usuario.setActivo(rs.getBoolean("activo"));
 		}
 		return usuario;
 	}
@@ -140,7 +164,8 @@ public class UsuarioDAOImp implements UsuarioDAO {
 										rs.getInt("monedas"),
 										rs.getDouble("tiempo"),
 										tematica.findById(rs.getInt("id_tematica")),
-										rs.getBoolean("isAdmin")));		
+										rs.getBoolean("isAdmin"),
+										rs.getBoolean("activo")));		
 		
 		return listaDeUsuarios;
 	}
