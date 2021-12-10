@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 import app.NoExisteTematicaException;
-import app.Sistema;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.Servlet;
 import jakarta.servlet.ServletException;
@@ -15,6 +14,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import model.Usuario;
 import services.UsuarioService;
 import utils.Crypt;
+import utils.Sistema;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet implements Servlet{

@@ -7,6 +7,7 @@ import model.PromoPorcentual;
 import model.Promocion;
 import model.Sugerible;
 import model.Usuario;
+import utils.Sistema;
 
 public class SistemaFront {
 	
@@ -68,12 +69,12 @@ public class SistemaFront {
 		System.out.println("|" + repiteCaracteres("_", 58) + "|");
 		System.out.println(generarDato("$" + s.getCosto(), "Costo:"));
 		System.out.println(generarDato(s.getTiempo() + "Hs", "Tiempo:"));
-		System.out.println(generarDato(s.getTematica(), "Temática:"));
+		System.out.println(generarDato(s.getTematica(), "Temï¿½tica:"));
 		System.out.println("|" + repiteCaracteres("_", 58) + "|");
 		if(s.getClass().equals(PromoAbsoluta.class))
 			mostrarBeneficio((Promocion) s, "-$" + (((PromoAbsoluta)s).getCostoAnterior() - s.getCosto()));
 		if(s.getClass().equals(PromoAxB.class))
-			mostrarBeneficio((Promocion) s, (((PromoAxB)s).getAtraccionGratis().getNombre() + " ¡GRATIS! :D"));
+			mostrarBeneficio((Promocion) s, (((PromoAxB)s).getAtraccionGratis().getNombre() + " ï¿½GRATIS! :D"));
 		if(s.getClass().equals(PromoPorcentual.class))
 			mostrarBeneficio((Promocion) s, "%" + (int)(((PromoPorcentual)s).getPorciento() * 100) + " OFF");		
 		return "";

@@ -31,7 +31,9 @@
 					<div class="btn-container d-flex flex-column">
 						<button class="btn-mas-info btn btn-outline-primary mb-3 py-2" value="atraccion-${atraccion.id}">MAS
 							INFO...</button>
-						<button class="btn btn-primary py-2">COMPRAR</button>
+						<form class="btn-container d-flex flex-column" action="buy.do" method="post">
+							<button class="btn btn-primary py-2" value="${atraccion.id}" name="atraccion">COMPRAR</button>
+						</form>
 					</div>
 				</div>
 			</div>

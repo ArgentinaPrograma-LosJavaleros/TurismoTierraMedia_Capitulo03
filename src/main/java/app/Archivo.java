@@ -21,6 +21,7 @@ import model.Ticket;
 import model.TipoPromocion;
 import model.Usuario;
 import persistence.impl.TematicaDAOImp;
+import utils.Sistema;
 
 public class Archivo {
 

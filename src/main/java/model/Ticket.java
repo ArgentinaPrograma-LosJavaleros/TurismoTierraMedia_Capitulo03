@@ -3,7 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-import app.Sistema;
+import utils.Sistema;
 
 public class Ticket {
 	
@@ -117,13 +117,13 @@ public class Ticket {
 				System.out.printf("|%46s|\n", a);
 			System.out.println("|                                              |");
 			System.out.println("|                                              |");
-			System.out.println("|        ¡MUCHAS GRACIAS POR SU COMPRA!        |");
+			System.out.println("|        ï¿½MUCHAS GRACIAS POR SU COMPRA!        |");
 			System.out.println("|                                              |");
 			System.out.println("|______________________________________________|");
 
 		} else {
 			System.out.println("");
-			System.out.println("No se pudo efectuar la compra... ¡¡¡Gracias por visitar Turismo en la Tierra Media!!!");
+			System.out.println("No se pudo efectuar la compra... ï¿½ï¿½ï¿½Gracias por visitar Turismo en la Tierra Media!!!");
 		}
 		return "";
 	}

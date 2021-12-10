@@ -3,8 +3,8 @@ package model;
 import java.sql.SQLException;
 
 import app.NoExisteTematicaException;
-import app.Sistema;
 import services.AtraccionService;
+import utils.Sistema;
 
 public class Usuario implements Comparable<Usuario>{
 

@@ -19,9 +19,7 @@ import services.PromocionService;
 
 @WebServlet("/home.do")
 public class ListSugeribleServlet extends HttpServlet implements Servlet {
-
 	private static final long serialVersionUID = 8316260090126443753L;
-	
 	private AtraccionService atraccionService;
 	private PromocionService promocionService;
 	
@@ -39,19 +37,13 @@ public class ListSugeribleServlet extends HttpServlet implements Servlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		
 		try {
-			
 			req.setAttribute("atracciones", this.atraccionService.findAll());
 			req.setAttribute("promociones", this.promocionService.findAll());
 			
 			RequestDispatcher disp = getServletContext().getRequestDispatcher("/home.jsp");
 			disp.forward(req, res);
-			
-			
-			
 		} catch (SQLException | NoExisteTematicaException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
