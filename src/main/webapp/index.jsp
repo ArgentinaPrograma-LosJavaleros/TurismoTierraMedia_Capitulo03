@@ -5,10 +5,9 @@
 	<jsp:include page="partials/head.jsp"></jsp:include>
 </head>
 <body>
-<script type="text/javascript">
-window.location.replace("login.jsp");
-
-</script>
+	<script type="text/javascript">
+		window.location.replace("login.jsp");
+	</script>
 <!-- 
 	<h1>
 		HOLA ${usuario}

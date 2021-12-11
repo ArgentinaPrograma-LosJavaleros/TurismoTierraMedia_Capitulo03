@@ -1,3 +1,4 @@
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -6,7 +7,7 @@
 		<article class="px-3 pb-5">
 			<div class="shadow-lg card border border-info overflow-hidden">
 				<div class="">
-					<img class="card-img-top" src="/TurismoTierraMedia_Capitulo03/assets/img/img-test-atraccion.png" alt="">
+					<img class="card-img-top" src="/TurismoTierraMedia_Capitulo03/assets/img/${fn:toLowerCase(promocion.tematica)}.jpg" alt="">
 				</div>
 				<div class="card-body p-3">
 					<h5 class="card-title mb-3 fs-5">

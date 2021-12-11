@@ -216,11 +216,11 @@ img.nav-logo {
 .card {
     background-color: var(--mainColor);
     border-radius: var(--border-radius-card);
+    
 }
 
 .card .card-body .card-title {
     color: var(--color-light);
-    height: 20px;
     max-width: 100%;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -262,3 +262,10 @@ img.nav-logo {
 	border-bottom: 4px solid var(--textColor);
 	color: var(--color-light);
 }
+
+.badge {
+	padding: 10px 15px;
+	left: 10px;
+	top: -40px;
+	background-color: rgba(5,33,33,0.8);
+} 
