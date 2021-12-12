@@ -19,15 +19,17 @@
 <script defer
 	src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-
 <!-- JQuery -->
 <script defer
   src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
   crossorigin="anonymous"></script>
   
+<!-- JS -->
 <script defer
 	src="/TurismoTierraMedia_Capitulo03/assets/js/popups.js"></script>
+<script defer
+	src="/TurismoTierraMedia_Capitulo03/assets/js/TimeConverter.js"></script>
 
 <!--CSS-->
 <link rel="stylesheet" href="/TurismoTierraMedia_Capitulo03/assets/css/style.css" />

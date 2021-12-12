@@ -269,3 +269,7 @@ img.nav-logo {
 	top: -40px;
 	background-color: rgba(5,33,33,0.8);
 } 
+.list-element{
+	background-color: var(--mainColor);
+	color: var(--textColor2);
+}

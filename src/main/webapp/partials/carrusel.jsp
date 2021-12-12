@@ -28,7 +28,7 @@
 			                            <div class="stats-tiempo align-self-center">
 			                                <span class="tiempo-icono mr-2"> 
 			                                	<i class="fas fa-clock"></i> 
-			                                	${promocion.tiempo}
+			                                	<span class="tiempo-numero">${promocion.tiempo}</span>
 			                                </span> 
 			                            </div>
 			                        </div>
@@ -66,8 +66,7 @@
 			                            <div class="stats-tiempo align-self-center">
 			                                <span class="tiempo-icono mr-2"> 
 			                                	<i class="fas fa-clock"></i>
-			                                	<%-- <c:set var="tiempoAtraccionH" value="${fn:substring(atraccion.tiempo, 0, fn:indexOf(atraccion.tiempo, '.'))}"/> --%>
-			                                	${atraccion.tiempo}
+			                                	 <span class="tiempo-numero">${atraccion.tiempo}</span>
 			                                </span> 
 			                            </div>
 			                        </div>
