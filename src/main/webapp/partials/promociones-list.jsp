@@ -10,9 +10,14 @@
 					<img class="card-img-top" src="/TurismoTierraMedia_Capitulo03/assets/img/${fn:toLowerCase(promocion.tematica)}.jpg" alt="">
 				</div>
 				<div class="card-body p-3">
-					<h5 class="card-title mb-3 fs-5">
+					<h5 class="card-title mb-2 fs-5">
 						<c:out value="${promocion.nombre}"></c:out>
 					</h5>
+					
+					<span class="badge badge-outline rounded-pill mb-2 badge-${fn:toLowerCase(promocion.tematica)}">
+			        	${promocion.tematica}
+			        </span>
+					
 					<div class="stats d-flex flex-row justify-content-between mb-4">
 						<div class="stats-monedas align-self-center">
 							<span class="monedas-icono mr-2"> <i class="fas fa-coins"></i>

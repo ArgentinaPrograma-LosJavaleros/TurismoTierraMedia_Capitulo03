@@ -12,9 +12,14 @@
 						alt="">
 				</div>
 				<div class="card-body p-3">
-					<h5 class="card-title mb-3 fs-5 text-nowrap">
+					<h5 class="card-title mb-2 fs-5 text-nowrap">
 						<c:out value="${atraccion.nombre}"></c:out>
 					</h5>
+					
+					<span class="badge badge-outline rounded-pill mb-2 badge-${fn:toLowerCase(atraccion.tematica)}">
+			        	${atraccion.tematica}
+			        </span>
+					
 					<div class="stats d-flex flex-row justify-content-between mb-4">
 						<div class="stats-monedas align-self-center">
 							<span class="monedas-icono mr-2"> <i class="fas fa-coins"></i>

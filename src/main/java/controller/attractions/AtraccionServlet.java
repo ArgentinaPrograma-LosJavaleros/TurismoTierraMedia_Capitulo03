@@ -1,6 +1,7 @@
 package controller.attractions;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 
 import com.google.gson.Gson;
@@ -41,8 +42,10 @@ public class AtraccionServlet extends HttpServlet implements Servlet {
 			
 			json = gson.toJson(this.atraccionService.findById(Integer.parseInt(id)));
 			
-			res.setContentType("application/json");
-			res.getOutputStream().println(json);
+			res.setContentType("application/json;charset=UTF-8");
+			PrintWriter out = res.getWriter();
+			out.print(json);
+			out.flush();
 			
 		} catch (SQLException e) {
 			e.printStackTrace();

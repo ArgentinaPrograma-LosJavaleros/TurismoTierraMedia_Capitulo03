@@ -1,6 +1,7 @@
 package controller.promotions;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 
 import com.google.gson.Gson;
@@ -39,8 +40,10 @@ public class PromocionServlet extends HttpServlet implements Servlet {
 			Gson gson = gsonbuilder.create();
 			
 			json = gson.toJson(this.promocionService.findById(Integer.parseInt(id)));
-			res.setContentType("application/json");
-			res.getOutputStream().println(json);
+			res.setContentType("application/json;charset=UTF-8");
+			PrintWriter out = res.getWriter();
+			out.print(json);
+			out.flush();
 			
 		} catch (SQLException e) {
 			e.printStackTrace();

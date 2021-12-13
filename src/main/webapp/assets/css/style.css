@@ -14,6 +14,13 @@
     --color-body-bg: linear-gradient(254.12deg, #002650 0%, #061D26 100%);
     --fullShadow: 0px 0px 15px 4px var(--shadowColor);
     
+    --color-aventura: #FFAC70;
+    --color-degustacion: #FDFF84;
+    --color-paisaje: #AFFF89;
+    --color-entretenimiento: #FFA0F6;
+    --color-carrera: #80FFE8;
+    --color-extremo: #FF7979;
+
     --hover-color-nav-link: rgba(82, 108, 140, 0.3);
     
     --border-radius-card: 8pt;
@@ -269,7 +276,44 @@ img.nav-logo {
 	top: -40px;
 	background-color: rgba(5,33,33,0.8);
 } 
-.list-element{
+
+.badge-outline {
+	padding: 5px 10px;
+	background-color: transparent;
+    border: 2px solid var(--color-light);
+}
+
+.badge-aventura {
+    border-color: var(--color-aventura);
+    color: var(--color-aventura);
+}
+
+.badge-degustacion {
+    border-color: var(--color-degustacion);
+    color: var(--color-degustacion);
+}
+
+.badge-paisaje {
+    border-color: var(--color-paisaje);
+    color: var(--color-paisaje);
+}
+
+.badge-entretenimiento {
+    border-color: var(--color-entretenimiento);
+    color: var(--color-entretenimiento);
+}
+
+.badge-carrera {
+    border-color: var(--color-carrera);
+    color: var(--color-carrera);
+}
+
+.badge-extremo {
+    border-color: var(--color-extremo);
+    color: var(--color-extremo);
+}
+
+.list-element {
 	background-color: var(--mainColor);
 	color: var(--textColor2);
 }
