@@ -50,12 +50,15 @@ $(document).on('click', '.btn-mas-info', function () {
 					showCancelButton: true,
 					background:'#061D26',
 					color: '#A4BAD7',					
-					confirmButtonText: 'Comprar',
-					cancelButtonText: 'Cancelar',
+					confirmButtonText: 'COMPRAR',
+					cancelButtonText: 'CANCELAR',
+					confirmButtonColor:'#79D4FF',
+					cancelButtonColor: '#FF7979',					
 					customClass: {
-						confirmButton:'btn-primary',
-						cancelButton:'btn-outline-primary',
+						
+						
 					},
+					cancelButton:'btn-outline-primary',
 					reverseButtons: true
 				}).then((result) => {
 					if (result.isConfirmed) {
@@ -89,14 +92,16 @@ $(document).on('click', '.btn-mas-info', function () {
 						</div>
 						<div class="text-start">
 							${res.descripcion === undefined ?  '' : res.descripcion}	
-						</div>
+						</div>						
 					`,
 					imageUrl:`/TurismoTierraMedia_Capitulo03/assets/img/${res.tematica.nombre.toLowerCase()}.jpg`,
 					showCancelButton: true,
 					background:'#061D26',
 					color: '#A4BAD7',
-					confirmButtonText: 'Comprar',
-					cancelButtonText: 'Cancelar',
+					confirmButtonText: 'COMPRAR',
+					cancelButtonText: 'CANCELAR',
+					confirmButtonColor:'#79D4FF',
+					cancelButtonColor: '#FF7979',					
 					reverseButtons: true
 				}).then((result) => {
 					if (result.isConfirmed) {
@@ -109,3 +114,5 @@ $(document).on('click', '.btn-mas-info', function () {
 		}
 	});
 });
+
+

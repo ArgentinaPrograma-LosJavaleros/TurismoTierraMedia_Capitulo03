@@ -317,3 +317,8 @@ img.nav-logo {
 	background-color: var(--mainColor);
 	color: var(--textColor2);
 }
+
+.swal2-cancel {
+	color: red;
+}
+
