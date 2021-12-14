@@ -31,6 +31,12 @@
 /*                  ESTILOS GENERALES                  */
 /*-----------------------------------------------------*/
 
+body {
+    background: var(--color-body-bg);
+    user-select: none;
+    padding: 0;
+}
+
 label {
     color: var(--textColor);
     margin: 3px 0 3px 0;
@@ -41,11 +47,21 @@ input {
 }
 
 /*-----------------------------------------------------*/
-/*                        INDEX                        */
+/*                    INDEX / LOGIN                    */
 /*-----------------------------------------------------*/
 
 .text-color-light {
 	color: var(--color-light);
+}
+
+.contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.visible {
+    display: none;
 }
 
 #logo-index {
@@ -64,12 +80,6 @@ input {
 	transition-property: all;
 	transition-duration: 0.2s;
 	transition-delay: 0s;
-}
-
-.contenedor {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
 }
 
 #imagen {
@@ -126,27 +136,16 @@ input {
     transition-delay: 0s;
 }
 
-.visible {
-    display: none;
-}
-
 #javaleros {
     color: #fff;
     position: fixed;
     bottom: 0%;
     z-index: 1;
-
-    /* top: calc(100vh - 26px); */
 }
 
 /*-----------------------------------------------------*/
+/*                        HOME                         */
 /*-----------------------------------------------------*/
-
-body {
-    background: var(--color-body-bg);
-    user-select: none;
-    padding: 0;
-}
 
 nav.nav {
     height: auto;
@@ -160,9 +159,9 @@ img.nav-logo {
     margin: 3px 0;
 }
 
-.usuario-stats .stats {
+/* .usuario-stats .stats {
     width: 9rem;
-}
+} */
 
 .usuario-stats .user-img {
     background-color: blueviolet; 
@@ -233,18 +232,6 @@ img.nav-logo {
     text-overflow: ellipsis;
     overflow: hidden;
 }
-
-
-
-/*
-#carrusel {
-	padding: 5px;
-}
-
-#carrusel > .card {
-	width: 48%;
-	margin: auto;
-}*/
 
 .nav-link {
 	color: var(--textColor2);
@@ -322,3 +309,6 @@ img.nav-logo {
 	color: red;
 }
 
+.btn-cart {
+	color: var(--textColor);	
+}
