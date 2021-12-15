@@ -13,6 +13,7 @@
     --color-green: #85F279;
     --color-body-bg: linear-gradient(254.12deg, #002650 0%, #061D26 100%);
     --fullShadow: 0px 0px 15px 4px var(--shadowColor);
+    --btn-volver: rgba(45, 58, 74, 0.6);
     
     --color-aventura: #FFAC70;
     --color-degustacion: #FDFF84;
@@ -260,9 +261,14 @@ img.nav-logo {
 .badge {
 	padding: 10px 15px;
 	left: 10px;
-	top: -40px;
 	background-color: rgba(5,33,33,0.8);
-} 
+    /* z-index: 10; */
+}
+
+.badge-etiquetas {
+	margin-top: -40px;
+	margin-left: 5px;
+}
 
 .badge-outline {
 	padding: 5px 10px;
@@ -311,4 +317,23 @@ img.nav-logo {
 
 .btn-cart {
 	color: var(--textColor);	
+}
+
+.fa-chevron-down-contenedor {
+	font-size: 50px;
+	color: var(--textColor2);
+}
+
+/*-----------------------------------------------------*/
+/*                       TICKET                        */
+/*-----------------------------------------------------*/
+
+.btn-volver {
+	font-size: 25px;
+	background-color: var(--btn-volver);
+	color: var(--textColor2);
+}
+
+.btn-volver:hover {
+	background-color: var(--textColor);
 }

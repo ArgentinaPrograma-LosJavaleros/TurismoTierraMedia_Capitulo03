@@ -15,7 +15,21 @@
 		</div>
 		<jsp:include page="partials/carrusel.jsp"></jsp:include>		
 	</section>
+	
+	<section class="mb-5">
+		<div class="d-flex justify-content-center fa-chevron-down-contenedor ">
+			<i class="fas fa-chevron-down fa faa-burst faa-burst animated"></i>
+			<i class="fas fa-chevron-down fa faa-burst faa-burst animated ms-5 me-5"></i>
+			<i class="fas fa-chevron-down fa faa-burst faa-burst animated"></i>
+		</div>
+	</section>
+	
 	<section class="container-xl pt-2 min-vh-100 mt-3">
+	
+		<div class="container-xl mb-4">
+			<h2 class="fs-2 text-color-light">ATRACCIONES Y PROMOCIONES DISPONIBLES</h2>
+		</div>
+	
 		<section>
 			<ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
 				<li class="nav-item" role="presentation">

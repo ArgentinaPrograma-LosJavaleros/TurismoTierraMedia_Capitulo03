@@ -48,7 +48,7 @@
 			</div>
 			
 			<div class="d-flex justify-content-center align-items-center px-3">
-				<a class="btn-cart position-relative" href="#">
+				<a class="btn-cart position-relative" href="ticket.jsp">
 					<span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
 					  <span class="visually-hidden">New alerts</span>
 					</span>
