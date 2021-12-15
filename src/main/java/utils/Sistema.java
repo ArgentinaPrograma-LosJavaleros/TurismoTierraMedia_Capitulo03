@@ -8,8 +8,6 @@ import java.util.Scanner;
 
 import app.Archivo;
 import app.NoExisteTematicaException;
-import app.SistemaFront;
-import controller.*;
 import model.Atraccion;
 import model.PromoAxB;
 import model.Promocion;
@@ -90,7 +88,7 @@ public class Sistema {
 	public static void cargarOfertas() throws SQLException, NoExisteTematicaException, FileNotFoundException, IOException {
 		Scanner ingreso = new Scanner(System.in);
 
-		Usuario u = Sistema.getUsuarioActual();
+		//Usuario u = Sistema.getUsuarioActual();
 
 		Ticket ticket = new Ticket();
 
@@ -137,9 +135,7 @@ public class Sistema {
 			System.out.println("");
 			System.out.println("No se pudo efectuar la compra... ���Gracias por visitar Turismo en la Tierra Media!!!");
 		}
-		
 		ingreso.close();
-		
 	}
 
 //	public static boolean verificarSugerible(Sugerible producto, Ticket ticket) throws SQLException {
@@ -189,7 +185,7 @@ public class Sistema {
 	}
 	
 	public static void actualizarDatos() throws SQLException, NoExisteTematicaException {
-		for (Usuario u: getUsuarios())
+		for (Usuario u : getUsuarios())
 			uC.update(u);
 		cargarDatos();
 	}
@@ -197,11 +193,10 @@ public class Sistema {
 	public static void crearTicket(Ticket t)throws SQLException, FileNotFoundException, IOException {
 		t.setId(tC.countAll()+1);
 		tC.insert(t);
-		Archivo.generarTicket(t, false);
-		
+		//Archivo.generarTicket(t, false);
 	}
 	
-	public static Integer verificarSugerible(Sugerible producto) throws SQLException {
+	public static Integer verificarSugerible(Sugerible producto) throws SQLException, NoExisteTematicaException, FileNotFoundException, IOException {
 		Usuario u = Sistema.getUsuarioActual();
 		Integer value = 0;
 		
@@ -222,15 +217,15 @@ public class Sistema {
 				}
 			} else {
 				for (Atraccion a : ((Promocion) producto).getAtracciones()) {
-					if(a.getCupoUsuarios() <= 0 && value == 0) {
-						value = 4;
+					if(a.getCupoUsuarios() <= 0) {
+						return 4;
 					} else {
 						value = verificarSugeriblesAnteriores(a);
 					}
 				}
 				
 				if (producto.getClass().equals(PromoAxB.class)) {
-					if (((PromoAxB) producto).getAtraccionGratis().getCupoUsuarios() <= 0  && value == 0) {
+					if (((PromoAxB) producto).getAtraccionGratis().getCupoUsuarios() <= 0) {
 						value = 4;
 					} else {
 						value = verificarSugeriblesAnteriores(((PromoAxB) producto).getAtraccionGratis());
@@ -239,6 +234,11 @@ public class Sistema {
 			}
 		} else {
 			value = 2;
+		}
+		
+		if(value == 0) {
+			u.comprar(producto, new Ticket());
+			System.out.println("Coso viva peron");
 		}
 		
 		return value;

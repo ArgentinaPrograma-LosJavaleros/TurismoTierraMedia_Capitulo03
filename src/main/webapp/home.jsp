@@ -17,6 +17,7 @@
 	</section>
 	<section class="container-xl pt-2 min-vh-100 mt-3">
 		<section>
+			<p class="text-white"><c:out value="${mensaje }"></c:out></p>
 			<ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
 				<li class="nav-item" role="presentation">
 					<button class="nav-link active" id="home-tab" data-bs-toggle="tab"
