@@ -1,6 +1,6 @@
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <section class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4 pt-4 ">
 	<c:forEach items="${atracciones}" var="atraccion">

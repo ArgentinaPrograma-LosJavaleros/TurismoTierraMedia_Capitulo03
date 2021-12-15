@@ -21,9 +21,12 @@
 
 
 <!-- DataTables -->
-<link rel="stylesheet" type="text/css" href="/TurismoTierraMedia_Capitulo03/assets/data-table/datatables.min.css"/>
+<link rel="stylesheet" type="text/css" href="/TurismoTierraMedia_Capitulo03/assets/data-tables/datatables.min.css"/>
  
-<script type="text/javascript" src="/TurismoTierraMedia_Capitulo03/assets/data-table/datatables.min.js"></script>
+<script defer type="text/javascript" src="/TurismoTierraMedia_Capitulo03/assets/data-tables/datatables.min.js"></script>
 
 <!-- Scripts -->
-<script defer src="./js/admin-data-tables.js"></script>
+<script defer src="/TurismoTierraMedia_Capitulo03/assets/js/admin-data-tables.js"></script>
+
+<!-- CSS -->
+<link rel="stylesheet" href="/TurismoTierraMedia_Capitulo03/assets/css/admin.css" />
