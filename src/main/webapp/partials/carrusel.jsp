@@ -7,14 +7,21 @@
         <div class="carousel-item container active">
             <div class="row row-cols-2 g-2">
             	<c:forEach items="${promociones}" var="promocion" end="1">   
-            		<div class="col">         	
+            		<div class="col btn-mas-info" value="promocion-${promocion.id}">         	
 		                <div class=" shadow-lg card border border-info overflow-hidden">
+		                
 		                    <div class="">
-		                        <img class="card-img-top card-img-carrusel " src="./assets/img/${fn:toLowerCase(promocion.tematica)}.jpg" alt=""/>
-		                    <span class="badge rounded-pill position-relative">
-			                	PROMOCIÓN
-			                </span>		                  
+			                    <img class="card-img-top card-img-carrusel" src="./assets/img/${fn:toLowerCase(promocion.tematica)}.jpg" alt=""/>
+								<div class="d-flex badge-etiquetas position-absolute">
+				                    <span class="badge rounded-pill me-1">
+					                	PROMOCIÓN
+					                </span>	
+					                <span class="badge rounded-pill">
+				                        	${fn:toUpperCase(promocion.tematica)}
+									</span>	   								
+								</div>
 		                    </div>
+		                    
 		                    <div class="card-body px-2 py-2">
 		                        <div class="d-flex flex-row justify-content-between">                        
 			                        <h5 class="card-title fs-5 col">${promocion.nombre}</h5>
@@ -45,13 +52,18 @@
         <div class="carousel-item container">
             <div class="row row-cols-2 g-2">
             	<c:forEach items="${atracciones}" var="atraccion" end="1">   
-            		<div class="col">         	
+            		<div class="col btn-mas-info" value="atraccion-${atraccion.id}">         	
 		                <div class=" shadow-lg card border border-info overflow-hidden">
 		                    <div class="">
 		                        <img class="card-img-top card-img-carrusel" src="./assets/img/${fn:toLowerCase(atraccion.tematica)}.jpg" alt="" />
-		                        <span class="badge rounded-pill position-relative">
-		                        	ATRACCIÓN
-								</span>
+		                        <div class="d-flex badge-etiquetas position-absolute">
+			                        <span class="badge rounded-pill me-1">
+			                        	ATRACCIÓN
+									</span>
+									<span class="badge rounded-pill">
+			                        	${fn:toUpperCase(atraccion.tematica)}
+									</span>
+								</div>
 		                    </div>
 		                    <div class="card-body px-2 py-2">
 		                        <div class="d-flex flex-row justify-content-between">   

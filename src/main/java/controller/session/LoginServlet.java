@@ -46,7 +46,8 @@ public class LoginServlet extends HttpServlet implements Servlet{
 			}
 		}*/
 		
-		if(Sistema.login(new Usuario(user), pass)) {			
+		if(Sistema.login(new Usuario(user), pass)) {
+			request.getSession().setAttribute("id", Sistema.getUsuarioActual().getId());
 			request.getSession().setAttribute("usuario", Sistema.getUsuarioActual().getNombre());
 			request.getSession().setAttribute("preferencia", Sistema.getUsuarioActual().getPreferencia());
 			request.getSession().setAttribute("monedas", Sistema.getUsuarioActual().getCantidadMonedas());

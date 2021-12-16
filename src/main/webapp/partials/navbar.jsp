@@ -34,7 +34,8 @@
 
 			</div>
 
-			<div class="stats d-flex flex-row justify-content-end me-3">
+			<div class="stats d-flex flex-row justify-content-end me-3 ms-1">			
+
 				<div class="stats-monedas align-self-center me-2">
 					<span class="monedas-icono me-1"> <i class="fas fa-coins"></i>
 					</span> <span class="monedas-numero">${monedas}</span>
@@ -43,9 +44,18 @@
 					<span class="tiempo-icono me-1"> <i class="fas fa-clock"></i>
 					</span> <span class="tiempo-numero">${tiempo}</span>
 				</div>
-
-
+				
 			</div>
+			
+			<div class="d-flex justify-content-center align-items-center px-3">
+				<a class="btn-cart position-relative" href="tickets/list.do?id_user=${id}">
+					<span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
+					  <span class="visually-hidden">New alerts</span>
+					</span>
+					<i class="fas fa-receipt fs-5"></i>
+				</a>
+			</div>
+
 		</div>
 	</div>
 </nav>

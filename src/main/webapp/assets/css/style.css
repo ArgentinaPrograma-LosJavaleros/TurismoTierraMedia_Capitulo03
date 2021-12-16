@@ -13,6 +13,7 @@
     --color-green: #85F279;
     --color-body-bg: linear-gradient(254.12deg, #002650 0%, #061D26 100%);
     --fullShadow: 0px 0px 15px 4px var(--shadowColor);
+    --btn-volver: rgba(45, 58, 74, 0.6);
     
     --color-aventura: #FFAC70;
     --color-degustacion: #FDFF84;
@@ -31,6 +32,12 @@
 /*                  ESTILOS GENERALES                  */
 /*-----------------------------------------------------*/
 
+body {
+    background: var(--color-body-bg);
+    user-select: none;
+    padding: 0;
+}
+
 label {
     color: var(--textColor);
     margin: 3px 0 3px 0;
@@ -41,11 +48,21 @@ input {
 }
 
 /*-----------------------------------------------------*/
-/*                        INDEX                        */
+/*                    INDEX / LOGIN                    */
 /*-----------------------------------------------------*/
 
 .text-color-light {
 	color: var(--color-light);
+}
+
+.contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.visible {
+    display: none;
 }
 
 #logo-index {
@@ -64,12 +81,6 @@ input {
 	transition-property: all;
 	transition-duration: 0.2s;
 	transition-delay: 0s;
-}
-
-.contenedor {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
 }
 
 #imagen {
@@ -126,27 +137,16 @@ input {
     transition-delay: 0s;
 }
 
-.visible {
-    display: none;
-}
-
 #javaleros {
     color: #fff;
     position: fixed;
     bottom: 0%;
     z-index: 1;
-
-    /* top: calc(100vh - 26px); */
 }
 
 /*-----------------------------------------------------*/
+/*                        HOME                         */
 /*-----------------------------------------------------*/
-
-body {
-    background: var(--color-body-bg);
-    user-select: none;
-    padding: 0;
-}
 
 nav.nav {
     height: auto;
@@ -160,9 +160,9 @@ img.nav-logo {
     margin: 3px 0;
 }
 
-.usuario-stats .stats {
+/* .usuario-stats .stats {
     width: 9rem;
-}
+} */
 
 .usuario-stats .user-img {
     background-color: blueviolet; 
@@ -234,18 +234,6 @@ img.nav-logo {
     overflow: hidden;
 }
 
-
-
-/*
-#carrusel {
-	padding: 5px;
-}
-
-#carrusel > .card {
-	width: 48%;
-	margin: auto;
-}*/
-
 .nav-link {
 	color: var(--textColor2);
 	border-bottom: 4px solid transparent;
@@ -273,9 +261,14 @@ img.nav-logo {
 .badge {
 	padding: 10px 15px;
 	left: 10px;
-	top: -40px;
 	background-color: rgba(5,33,33,0.8);
-} 
+    /* z-index: 10; */
+}
+
+.badge-etiquetas {
+	margin-top: -40px;
+	margin-left: 5px;
+}
 
 .badge-outline {
 	padding: 5px 10px;
@@ -316,4 +309,31 @@ img.nav-logo {
 .list-element {
 	background-color: var(--mainColor);
 	color: var(--textColor2);
+}
+
+.swal2-cancel {
+	color: red;
+}
+
+.btn-cart {
+	color: var(--textColor);	
+}
+
+.fa-chevron-down-contenedor {
+	font-size: 50px;
+	color: var(--textColor2);
+}
+
+/*-----------------------------------------------------*/
+/*                       TICKET                        */
+/*-----------------------------------------------------*/
+
+.btn-volver {
+	font-size: 25px;
+	background-color: var(--btn-volver);
+	color: var(--textColor2);
+}
+
+.btn-volver:hover {
+	background-color: var(--textColor);
 }
