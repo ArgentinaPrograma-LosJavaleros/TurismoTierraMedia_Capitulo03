@@ -1,10 +1,9 @@
-package app;
+package utils;
 
 import java.util.Comparator;
 
 import model.Sugerible;
 import model.Tematica;
-import utils.Sistema;
 
 public class OrdenadorPorTematica implements Comparator<Sugerible> {
 
