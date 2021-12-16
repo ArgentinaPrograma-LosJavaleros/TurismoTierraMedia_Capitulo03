@@ -47,14 +47,26 @@ public class LoginServlet extends HttpServlet implements Servlet{
 		}*/
 		
 		if(Sistema.login(new Usuario(user), pass)) {
+			
 			request.getSession().setAttribute("id", Sistema.getUsuarioActual().getId());
+			
+			Boolean isAdmin = Sistema.getUsuarioActual().getIsAdmin();
+			request.getSession().setAttribute("isAdmin", isAdmin);			
+
 			request.getSession().setAttribute("usuario", Sistema.getUsuarioActual().getNombre());
 			request.getSession().setAttribute("preferencia", Sistema.getUsuarioActual().getPreferencia());
 			request.getSession().setAttribute("monedas", Sistema.getUsuarioActual().getCantidadMonedas());
 			request.getSession().setAttribute("tiempo", Sistema.getUsuarioActual().getTiempoDisponible());
 			//response.sendRedirect("index.jsp");
 			
-			RequestDispatcher dispatcher = request.getRequestDispatcher("home.do");
+			
+			RequestDispatcher dispatcher = null;
+			
+			if(isAdmin)
+				dispatcher = request.getRequestDispatcher("home.admin");
+			else
+				dispatcher = request.getRequestDispatcher("home.do");
+
 			dispatcher.forward(request, response);
 		}else {
 			request.setAttribute("error","Usuario y/o Contraseña incorrectos");

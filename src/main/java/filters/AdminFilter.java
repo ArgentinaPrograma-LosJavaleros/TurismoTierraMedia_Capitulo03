@@ -11,14 +11,15 @@ import jakarta.servlet.ServletResponse;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
 
-@WebFilter(urlPatterns = "*.do")
-public class LoggedFilter implements Filter {
+@WebFilter(urlPatterns = "*.admin")
+public class AdminFilter implements Filter {
 
+	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		
 		String user = (String) ((HttpServletRequest) request).getSession().getAttribute("usuario");
+		Boolean isAdmin = (Boolean)((HttpServletRequest) request).getSession().getAttribute("isAdmin");
 		
-		if (user != null)
+		if (user != null && isAdmin)
 			chain.doFilter(request, response);
 		else {
 			RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/login.jsp");
@@ -26,6 +27,5 @@ public class LoggedFilter implements Filter {
 		}
 		
 	}
-
 
 }
