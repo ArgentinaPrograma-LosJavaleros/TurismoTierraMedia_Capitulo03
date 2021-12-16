@@ -43,23 +43,15 @@ public class BuySugeribleServlet extends HttpServlet {
 		try {
 			if (request.getParameter("atraccion") != null) {
 				id = Integer.valueOf(request.getParameter("atraccion"));
-				//System.out.println("Atraccion: " + id);
 				producto = atraccionService.findById(id);
 			}
 
 			if (request.getParameter("promocion") != null) {
 				id = Integer.valueOf(request.getParameter("promocion"));
-				//System.out.println("Promoción: " + id);
 				producto = promocionService.findById(id);
 			}
-
-			//System.out.println(Sistema.verificarSugerible(producto));
-			//request.setAttribute("mensaje", mensajeSegunAccion(Sistema.verificarSugerible(producto)));
 			
 			Integer accion = Sistema.verificarSugerible(producto);
-			
-			//request.setAttribute("tipo", accion);
-			//request.setAttribute("mensaje", accion);
 
 			GsonBuilder gsonbuilder= new GsonBuilder();
 			
@@ -76,17 +68,14 @@ public class BuySugeribleServlet extends HttpServlet {
 			PrintWriter out = response.getWriter();
 			out.print(json);
 			out.flush();
-			
-			//RequestDispatcher dispatcher = request.getRequestDispatcher("mensaje");
-			//dispatcher.forward(request, response);
 		
-		} catch (SQLException | NoExisteTematicaException /*| ServletException*/ | IOException e) {
+		} catch (SQLException | NoExisteTematicaException | IOException e) {
 			e.printStackTrace();
 		}
 	}
 
 	private String mensajeSegunAccion(Integer accion) {
-		// Si accion = 0
+		
 		String mensaje = "Muchas gracias por su compra.";
 		
 		if(accion < 0 || accion > 4)
