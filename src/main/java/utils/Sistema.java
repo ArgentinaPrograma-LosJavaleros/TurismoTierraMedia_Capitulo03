@@ -238,7 +238,6 @@ public class Sistema {
 		
 		if(value == 0) {
 			u.comprar(producto, new Ticket());
-			System.out.println("Coso viva peron");
 		}
 		
 		return value;

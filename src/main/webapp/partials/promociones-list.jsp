@@ -33,12 +33,10 @@
 						</div>
 					</div>
 					<div class="btn-container d-flex flex-column">
-						<button class="btn-mas-info btn btn-outline-primary mb-3 py-2" value="promocion-${promocion.id}">MAS
+						<button class="btn-mas-info btn btn-outline-primary mb-3 py-2" value="${promocion.id}" name="promocion">MAS
 							INFO...
 						</button>
-						<form class="btn-container d-flex flex-column" action="buy.do" method="post">
-							<button class="btn btn-primary py-2" value="${promocion.id}" name="promocion">COMPRAR</button>
-						</form>
+						<button class="btn-comprar btn btn-primary py-2" value="${promocion.id}" name="promocion">COMPRAR</button>
 					</div>
 				</div>
 			</div>

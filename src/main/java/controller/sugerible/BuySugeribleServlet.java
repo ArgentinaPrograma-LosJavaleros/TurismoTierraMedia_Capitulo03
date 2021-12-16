@@ -1,7 +1,11 @@
 package controller.sugerible;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import app.NoExisteTematicaException;
 import jakarta.servlet.RequestDispatcher;
@@ -50,14 +54,33 @@ public class BuySugeribleServlet extends HttpServlet {
 			}
 
 			//System.out.println(Sistema.verificarSugerible(producto));
-			request.setAttribute("mensaje", mensajeSegunAccion(Sistema.verificarSugerible(producto)));
+			//request.setAttribute("mensaje", mensajeSegunAccion(Sistema.verificarSugerible(producto)));
+			
+			Integer accion = Sistema.verificarSugerible(producto);
+			
+			//request.setAttribute("tipo", accion);
+			//request.setAttribute("mensaje", accion);
+
+			GsonBuilder gsonbuilder= new GsonBuilder();
+			
+			Gson gson = gsonbuilder.create();
+			
+			String json = gson.toJson(new Mensaje(accion, mensajeSegunAccion(accion)));
+			
+			
+			
 			request.getSession().setAttribute("monedas", Sistema.getUsuarioActual().getCantidadMonedas());
 			request.getSession().setAttribute("tiempo", Sistema.getUsuarioActual().getTiempoDisponible());
 			
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/home.do");
-			dispatcher.forward(request, response);
+			response.setContentType("application/json;charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.print(json);
+			out.flush();
+			
+			//RequestDispatcher dispatcher = request.getRequestDispatcher("mensaje");
+			//dispatcher.forward(request, response);
 		
-		} catch (SQLException | NoExisteTematicaException | ServletException | IOException e) {
+		} catch (SQLException | NoExisteTematicaException /*| ServletException*/ | IOException e) {
 			e.printStackTrace();
 		}
 	}
