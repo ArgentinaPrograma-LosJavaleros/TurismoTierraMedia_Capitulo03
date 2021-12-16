@@ -7,7 +7,7 @@
         <div class="carousel-item container active">
             <div class="row row-cols-2 g-2">
             	<c:forEach items="${promociones}" var="promocion" end="1">   
-            		<div class="col btn-mas-info" value="promocion-${promocion.id}">         	
+            		<div class="col btn-mas-info" value="${promocion.id}" name="promocion">         	
 		                <div class=" shadow-lg card border border-info overflow-hidden">
 		                
 		                    <div class="">
@@ -52,8 +52,8 @@
         <div class="carousel-item container">
             <div class="row row-cols-2 g-2">
             	<c:forEach items="${atracciones}" var="atraccion" end="1">   
-            		<div class="col btn-mas-info" value="atraccion-${atraccion.id}">         	
-		                <div class=" shadow-lg card border border-info overflow-hidden">
+            		<div class="col btn-mas-info" value="${atraccion.id}" name="atraccion">         	
+		                <div class="shadow-lg card border border-info overflow-hidden">
 		                    <div class="">
 		                        <img class="card-img-top card-img-carrusel" src="./assets/img/${fn:toLowerCase(atraccion.tematica)}.jpg" alt="" />
 		                        <div class="d-flex badge-etiquetas position-absolute">

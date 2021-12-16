@@ -31,11 +31,6 @@
 		</div>
 	
 		<section>
-<<<<<<< HEAD
-			<p class="text-white"><c:out value="${mensaje }"></c:out></p>
-=======
-		
->>>>>>> front-dev
 			<ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
 				<li class="nav-item" role="presentation">
 					<button class="nav-link active" id="home-tab" data-bs-toggle="tab"
