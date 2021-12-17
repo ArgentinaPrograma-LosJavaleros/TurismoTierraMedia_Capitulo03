@@ -90,7 +90,7 @@ $(document).on('click', '.btn-mas-info', function() {
 						console.log(`${xhr.status}: ${xhr.statusText}`);
 						compraFallida.fire({
 							title: 'La compra no se pudo realizar',
-							html: 'Ocurrio un errror inesperado'
+							html: 'Ocurrio un error inesperado'
 						});
 					});
 				}
