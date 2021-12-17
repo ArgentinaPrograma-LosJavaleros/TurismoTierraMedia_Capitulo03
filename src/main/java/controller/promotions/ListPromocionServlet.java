@@ -1,12 +1,10 @@
-package controller.attractions;
+package controller.promotions;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.Collections;
 import java.util.List;
 
 import app.NoExisteTematicaException;
-import app.SistemaFront;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.Servlet;
 import jakarta.servlet.ServletException;
@@ -14,35 +12,34 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.Atraccion;
-import services.AtraccionService;
-import utils.OrdenadorPorTematica;
-import utils.Sistema;
+import model.Promocion;
+import services.PromocionService;
 
-@WebServlet("/atracciones/list.admin")
-public class ListAtraccionServlet extends HttpServlet implements Servlet {
+@WebServlet("/Promociones/list.admin")
+public class ListPromocionServlet extends HttpServlet implements Servlet {
 
-	private static final long serialVersionUID = -6306519455235321483L;
-	private AtraccionService atraccionService;
+	private static final long serialVersionUID = 8316260090126443753L;
+	
+	private PromocionService promocionService;
 	
 	@Override
 	public void init() throws ServletException {
 		super.init();
-		this.atraccionService = new AtraccionService();
+		this.promocionService = new PromocionService();
 	}
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
-		List<Atraccion> atracciones = null;
+		List<Promocion> promociones = null;
 		
 		try {
 			
-			atracciones = this.atraccionService.findAll();
+			promociones = this.promocionService.findAll();
 
-			req.setAttribute("atracciones", atracciones);
+			req.setAttribute("promociones", promociones);
 			
-			RequestDispatcher disp = getServletContext().getRequestDispatcher("/views/admin/atraccion-list.jsp");
+			RequestDispatcher disp = getServletContext().getRequestDispatcher("/views/admin/promocion-list.jsp");
 			disp.forward(req, res);
 			
 		} catch (SQLException | NoExisteTematicaException e) {
