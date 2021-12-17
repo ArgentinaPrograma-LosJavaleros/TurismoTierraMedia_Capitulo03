@@ -19,7 +19,7 @@ import services.AtraccionService;
 import utils.OrdenadorPorTematica;
 import utils.Sistema;
 
-@WebServlet("/atracciones/list.admin")
+@WebServlet("/atracciones-list.admin")
 public class ListAtraccionServlet extends HttpServlet implements Servlet {
 
 	private static final long serialVersionUID = -6306519455235321483L;

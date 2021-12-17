@@ -7,31 +7,33 @@
 	        <tr>
 	            <th>#</th>
 	            <th>Nombre</th>
-	            <th>Monedas</th>
-	            <th>Tiempo</th>
-	            <th>Atracciones</th>
-	            <th>Habilitado</th>
-	            <th>Editar</th>
+	            <th>Costo</th>
+	            <th>Tipo</th>
+	            <th>Acciones</th>
 	        </tr>
 	    </thead>
 	    <tbody>
-	    	<c:forEach var="i" begin="1" end="30">
+	    	<c:forEach items="${promociones}" var="usuario">
 	    		<tr>
-		            <td>${i}</td>
-		            <td>Eowyn</td>
-		            <td>10</td>
-		            <td>2:50</td>
-		            <td>Aventura</td>
-		            <td>
-		            	<div class="d-flex justify-content-center h-100">
-			                <div class="form-check">
-			                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-			                </div>
-		            	</div>
-		            </td>
+		            <td>${promociones.id}</td>
+		            <td>${promociones.nombre}</td>
+		            <td>${promociones.costo}</td>
+		            <td>${promociones.tiempoDisponible}</td>
+		            <td>${usuario.preferencia}</td>
+		            <c:choose>
+						<c:when test="${promociones.activo}">
+							<td>HABILITADA</td>
+						</c:when>
+						<c:otherwise>
+							<td>-</td>							
+						</c:otherwise>
+					</c:choose>
 		            <td>
 		                <button class="btn btn-primary ">
 		                    <i class="fas fa-edit"></i>
+		                </button>
+		                <button class="btn btn-danger ">
+		                    <i class="fas fa-trash"></i>
 		                </button>
 		            </td>
 	        	</tr>

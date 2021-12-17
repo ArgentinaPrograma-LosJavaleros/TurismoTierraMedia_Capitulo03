@@ -7,9 +7,8 @@ public abstract class Promocion extends Sugerible {
 	private TipoPromocion tipoPromocion;
 	private ArrayList<Atraccion> atracciones;
 
-	// Constructor
 	public Promocion(Integer idPromocion,String nombrePromocion, TipoPromocion tipoPromocion,
-			ArrayList<Atraccion> atracciones) {
+			ArrayList<Atraccion> atracciones, Boolean activo) {
 		setId(idPromocion);
 		setNombre(nombrePromocion);
 		setTipoPromocion(tipoPromocion);
@@ -18,6 +17,13 @@ public abstract class Promocion extends Sugerible {
 		setCosto();
 		this.tiempo = 0.0;
 		this.setTiempo();
+		this.setActivo(activo);
+	}
+	
+	// Constructor
+	public Promocion(Integer idPromocion,String nombrePromocion, TipoPromocion tipoPromocion,
+			ArrayList<Atraccion> atracciones) {
+		this(idPromocion, nombrePromocion, tipoPromocion, atracciones, true);
 	}
 	
 	

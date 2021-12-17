@@ -45,6 +45,7 @@ public class AtraccionDAOImp implements AtraccionDAO {
 		columnas.add("costo");
 		columnas.add("id_tematica");
 		columnas.add("descripcion");
+		columnas.add("activo");
 		
 		tipos.add("String");
 		tipos.add("Int");
@@ -52,6 +53,7 @@ public class AtraccionDAOImp implements AtraccionDAO {
 		tipos.add("Int");
 		tipos.add("Int");
 		tipos.add("String");
+		tipos.add("Int");
 		
 		values.add(t.getNombre());
 		values.add(t.getCupoUsuarios().toString());
@@ -59,6 +61,10 @@ public class AtraccionDAOImp implements AtraccionDAO {
 		values.add(t.getCosto().toString());
 		values.add(t.getTematica().getId().toString());
 		values.add(t.getDescripcion());
+		if (t.getActivo())
+			values.add(String.valueOf(1));
+		else
+			values.add(String.valueOf(0));
 		
 		return CRUD.insert("atracciones", columnas, tipos, values);
 	}
@@ -77,7 +83,7 @@ public class AtraccionDAOImp implements AtraccionDAO {
 		columnas.add("costo");
 		columnas.add("id_tematica");
 		columnas.add("descripcion");
-		
+		columnas.add("activo");
 		
 		tipos.add("Int");
 		tipos.add("String");
@@ -86,6 +92,7 @@ public class AtraccionDAOImp implements AtraccionDAO {
 		tipos.add("Int");
 		tipos.add("Int");
 		tipos.add("String");
+		tipos.add("Int");
 		
 		values.add(t.getId().toString());
 		values.add(t.getNombre());
@@ -94,6 +101,10 @@ public class AtraccionDAOImp implements AtraccionDAO {
 		values.add(t.getCosto().toString());
 		values.add(t.getTematica().getId().toString());
 		values.add(t.getDescripcion());
+		if (t.getActivo())
+			values.add(String.valueOf(1));
+		else
+			values.add(String.valueOf(0));
 		
 		return CRUD.update("atracciones", columnas, tipos, values, condicion);
 	}

@@ -6,9 +6,13 @@ public abstract class Sugerible implements Comparable<Sugerible> {
 	protected String nombre;
 	protected Integer costo;
 	protected Double tiempo;
-	protected Tematica tematica; 
+	protected Tematica tematica;
+	private Boolean activo;
 	
-	
+	public Boolean getActivo() {
+		return activo;
+	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -47,6 +51,10 @@ public abstract class Sugerible implements Comparable<Sugerible> {
 
 	public void setTematica(Tematica tematica) {
 		this.tematica = tematica;
+	}
+	
+	public void setActivo(Boolean activo) {
+		this.activo = activo;
 	}
 	
 	@Override
