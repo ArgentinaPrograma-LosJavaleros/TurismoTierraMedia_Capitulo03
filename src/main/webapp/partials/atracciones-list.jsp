@@ -9,6 +9,7 @@
 				<div class="">
 					<img class="card-img-top"
 						src="/TurismoTierraMedia_Capitulo03/assets/img/${fn:toLowerCase(atraccion.tematica)}.jpg"
+						onerror="this.src='/TurismoTierraMedia_Capitulo03/assets/img/default.jpg';"
 						alt="">
 				</div>
 				<div class="card-body p-3">
@@ -35,11 +36,9 @@
 						</div>
 					</div>
 					<div class="btn-container d-flex flex-column">
-						<button class="btn-mas-info btn btn-outline-primary mb-3 py-2" value="atraccion-${atraccion.id}">MAS
+						<button class="btn-mas-info btn btn-outline-primary mb-3 py-2" value="${atraccion.id}" name="atraccion">MAS
 							INFO...</button>
-						<form class="btn-container d-flex flex-column" action="buy.do" method="post">
-							<button class="btn btn-primary py-2" value="${atraccion.id}" name="atraccion">COMPRAR</button>
-						</form>
+						<button class="btn-comprar btn btn-primary py-2" value="${atraccion.id}" name="atraccion">COMPRAR</button>
 					</div>
 				</div>
 			</div>

@@ -7,8 +7,8 @@ public class PromoAxB extends Promocion {
 	private Atraccion atraccionGratis;
 
 	public PromoAxB(Integer idPromocion, String nombrePromocion, Atraccion atraccionGratis, 
-					ArrayList<Atraccion> atracciones, TipoPromocion tipoPromo) {
-		super(idPromocion, nombrePromocion, tipoPromo, atracciones);
+					ArrayList<Atraccion> atracciones, TipoPromocion tipoPromo, Boolean activo) {
+		super(idPromocion, nombrePromocion, tipoPromo, atracciones, activo);
 		this.setAtraccionGratis(atraccionGratis);
 		super.tiempo += this.atraccionGratis.getTiempo();
 	}
@@ -26,9 +26,9 @@ public class PromoAxB extends Promocion {
 		
 		System.out.printf("| Nombre = %-30s"
                         + "| Atracciones = %-50s"
-                        + "| Atracción gratis = %-29s"
+                        + "| Atracciï¿½n gratis = %-29s"
                         + "| Precio Final = %-5d"
-                        + "| Temática = %-15s |", 
+                        + "| Temï¿½tica = %-15s |", 
                         super.getNombre(),
                         getNombreAtracciones(),
                         getAtraccionGratis().getNombre(),

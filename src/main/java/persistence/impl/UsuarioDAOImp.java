@@ -39,12 +39,14 @@ public class UsuarioDAOImp implements UsuarioDAO {
 		List<String> values= new ArrayList<String> (); 
 		
 		columnas.add("nombre");
+		columnas.add("pass");
 		columnas.add("monedas");
 		columnas.add("tiempo");
 		columnas.add("id_tematica");
 		columnas.add("isAdmin");
 		columnas.add("activo");
 		
+		tipos.add("String");
 		tipos.add("String");
 		tipos.add("Int");
 		tipos.add("Double");
@@ -53,6 +55,7 @@ public class UsuarioDAOImp implements UsuarioDAO {
 		tipos.add("Int");
 		
 		values.add(t.getNombre());
+		values.add(t.getPass());
 		values.add(t.getCantidadMonedas().toString());
 		values.add(t.getTiempoDisponible().toString());
 		values.add(t.getPreferencia().getId().toString());
@@ -133,6 +136,7 @@ public class UsuarioDAOImp implements UsuarioDAO {
 		if(rs.next()) {
 			usuario.setId(rs.getInt("id_usuario"));
 			usuario.setNombre(rs.getString("nombre"));
+			usuario.setPass(rs.getString("pass"));
 			usuario.setCantidadMonedas(rs.getInt("monedas"));
 			usuario.setTiempoDisponible(rs.getDouble("tiempo"));
 			usuario.setPreferencia(tematica.findById(rs.getInt("id_tematica")));
@@ -169,4 +173,9 @@ public class UsuarioDAOImp implements UsuarioDAO {
 		
 		return listaDeUsuarios;
 	}
+	
+	public int actualizarActivo(Integer id, Integer valor) throws SQLException {
+		return CRUD.actualizarActivo("usuarios", valor, "id_usuario", id);
+	}
+	
 }

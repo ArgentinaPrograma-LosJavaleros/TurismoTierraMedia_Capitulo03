@@ -6,8 +6,8 @@ public class PromoAbsoluta extends Promocion {
 	
 	// Constructor
 	public PromoAbsoluta(Integer idPromocion, String nombrePromocion, Integer costoPromocion, 
-						 ArrayList<Atraccion> atracciones, TipoPromocion tipoPromo) {
-		super(idPromocion, nombrePromocion, tipoPromo, atracciones);
+						 ArrayList<Atraccion> atracciones, TipoPromocion tipoPromo, Boolean activo) {
+		super(idPromocion, nombrePromocion, tipoPromo, atracciones, activo);
 		super.setCosto(costoPromocion);
 	}
 	
@@ -28,7 +28,7 @@ public class PromoAbsoluta extends Promocion {
 		                + "| Atracciones = %-50s"
 		                + "| Costo Anterior = %-31d"
 		                + "| Precio Final = %-5d"
-		                + "| Temática = %-15s |", 
+		                + "| Temï¿½tica = %-15s |", 
 		                super.getNombre(),
 		                getNombreAtracciones(),
 		                getCostoAnterior(),

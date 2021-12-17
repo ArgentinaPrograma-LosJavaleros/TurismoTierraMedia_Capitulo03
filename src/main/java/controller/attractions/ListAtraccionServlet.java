@@ -2,9 +2,11 @@ package controller.attractions;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Collections;
 import java.util.List;
 
 import app.NoExisteTematicaException;
+import app.SistemaFront;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.Servlet;
 import jakarta.servlet.ServletException;
@@ -14,12 +16,13 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import model.Atraccion;
 import services.AtraccionService;
+import utils.OrdenadorPorTematica;
+import utils.Sistema;
 
-@WebServlet("/atracciones/list.do")
+@WebServlet("/atracciones-list.admin")
 public class ListAtraccionServlet extends HttpServlet implements Servlet {
 
-	private static final long serialVersionUID = 8316260090126443753L;
-	
+	private static final long serialVersionUID = -6306519455235321483L;
 	private AtraccionService atraccionService;
 	
 	@Override
@@ -36,10 +39,10 @@ public class ListAtraccionServlet extends HttpServlet implements Servlet {
 		try {
 			
 			atracciones = this.atraccionService.findAll();
-			
+
 			req.setAttribute("atracciones", atracciones);
 			
-			RequestDispatcher disp = getServletContext().getRequestDispatcher("/views/atracciones/list.jsp");
+			RequestDispatcher disp = getServletContext().getRequestDispatcher("/views/admin/atraccion-list.jsp");
 			disp.forward(req, res);
 			
 		} catch (SQLException | NoExisteTematicaException e) {

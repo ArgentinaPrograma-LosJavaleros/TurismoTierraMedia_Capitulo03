@@ -6,11 +6,11 @@ public class PromoPorcentual extends Promocion {
 
 	private Double porciento;
 	private static final String PORCENTAJE_ERRONEO = "El porcentaje "
-			+ "Ingresado NO ES VÁLIDO, debe ser escrito en el siguiente " + "formato > 0.XX";
+			+ "Ingresado NO ES Vï¿½LIDO, debe ser escrito en el siguiente " + "formato > 0.XX";
 
 	public PromoPorcentual(Integer idPromocion, String nombrePromocion, Double porciento, 
-						   ArrayList<Atraccion> atracciones, TipoPromocion tipoPromo) {
-		super(idPromocion, nombrePromocion, tipoPromo, atracciones);
+						   ArrayList<Atraccion> atracciones, TipoPromocion tipoPromo, Boolean activo) {
+		super(idPromocion, nombrePromocion, tipoPromo, atracciones, activo);
 		this.setPorciento(porciento);
 		super.costo = (int) Math.ceil(super.getCosto() - (super.getCosto() * this.getPorciento()));
 	}
@@ -31,7 +31,7 @@ public class PromoPorcentual extends Promocion {
 	                     + "| Atracciones = %-50s" 
 				         + "| Descuento = %-36.2f" 
 	                     + "| Precio Final = %-5d"
-						 + "| Temática = %-15s |",
+						 + "| Temï¿½tica = %-15s |",
 				         super.getNombre(), 
 				         getNombreAtracciones(), 
 				         getPorciento(), 

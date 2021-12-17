@@ -7,7 +7,7 @@
 		<article class="px-3 pb-5">
 			<div class="shadow-lg card border border-info overflow-hidden">
 				<div class="">
-					<img class="card-img-top" src="/TurismoTierraMedia_Capitulo03/assets/img/${fn:toLowerCase(promocion.tematica)}.jpg" alt="">
+					<img class="card-img-top" src="/TurismoTierraMedia_Capitulo03/assets/img/${fn:toLowerCase(promocion.tematica)}.jpg" onerror="this.src='/TurismoTierraMedia_Capitulo03/assets/img/default.jpg';" alt="">
 				</div>
 				<div class="card-body p-3">
 					<h5 class="card-title mb-2 fs-5">
@@ -33,12 +33,10 @@
 						</div>
 					</div>
 					<div class="btn-container d-flex flex-column">
-						<button class="btn-mas-info btn btn-outline-primary mb-3 py-2" value="promocion-${promocion.id}">MAS
+						<button class="btn-mas-info btn btn-outline-primary mb-3 py-2" value="${promocion.id}" name="promocion">MAS
 							INFO...
 						</button>
-						<form class="btn-container d-flex flex-column" action="buy.do" method="post">
-							<button class="btn btn-primary py-2" value="${promocion.id}" name="promocion">COMPRAR</button>
-						</form>
+						<button class="btn-comprar btn btn-primary py-2" value="${promocion.id}" name="promocion">COMPRAR</button>
 					</div>
 				</div>
 			</div>

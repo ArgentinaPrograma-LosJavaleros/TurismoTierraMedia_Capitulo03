@@ -100,4 +100,14 @@ public class CRUD {
 		}
 		return datos.executeUpdate();
 	}
+	
+	public static int actualizarActivo(String tabla, Integer valueActivo, String columnaID, Integer valueID) throws SQLException {
+		String query = "UPDATE " + tabla + " SET  activo = " + valueActivo + " WHERE " + columnaID + " = " + valueID;
+		
+		Connection connection = ConnectionProvider.getConnection();
+		PreparedStatement datos = connection.prepareStatement(query);
+		
+		return datos.executeUpdate();
+	}
+
 }

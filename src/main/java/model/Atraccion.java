@@ -6,7 +6,7 @@ public class Atraccion extends Sugerible {
 	private String descripcion;
 	
 	public Atraccion(Integer idAtraccion,String nombreAtraccion, Integer costoAtraccion, Double tiempoAtraccion, Integer cupoUsuarios,
-			Tematica tematicaAtraccion, String descripcion) {
+			Tematica tematicaAtraccion, String descripcion, Boolean activo) {
 		super.setId(idAtraccion);
 		super.setNombre(nombreAtraccion);
 		super.setCosto(costoAtraccion);
@@ -14,6 +14,12 @@ public class Atraccion extends Sugerible {
 		super.setTematica(tematicaAtraccion);
 		this.setCupoUsuarios(cupoUsuarios);
 		this.setDescripcion(descripcion);
+		this.setActivo(activo);
+	}
+	
+	public Atraccion(Integer idAtraccion,String nombreAtraccion, Integer costoAtraccion, Double tiempoAtraccion, Integer cupoUsuarios,
+			Tematica tematicaAtraccion, String descripcion) {
+		this(idAtraccion, nombreAtraccion, costoAtraccion, tiempoAtraccion, cupoUsuarios, tematicaAtraccion, descripcion, true);
 	}
 
 	public Atraccion(String nombreAtraccion) {

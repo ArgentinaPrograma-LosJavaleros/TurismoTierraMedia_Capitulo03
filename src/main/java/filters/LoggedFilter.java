@@ -17,15 +17,13 @@ public class LoggedFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		
 		String user = (String) ((HttpServletRequest) request).getSession().getAttribute("usuario");
-		if (user != null) {
+		
+		if (user != null)
 			chain.doFilter(request, response);
-		} else {
-//			request.setAttribute("flash", "Por favor, ingresa al sistema");
-			RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/login.jsp");
+		else {
+			RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("TurismoTierraMedia_Capitulo03/login.jsp");
 			dispatcher.forward(request, response);
 		}
-		
-		
 		
 	}
 

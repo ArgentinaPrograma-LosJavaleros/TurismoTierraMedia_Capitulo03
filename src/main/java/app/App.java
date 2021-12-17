@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 import model.Usuario;
 import persistence.commons.ConnectionProvider;
+import utils.OrdenadorPorTematica;
 import utils.Sistema;
 
 public class App {

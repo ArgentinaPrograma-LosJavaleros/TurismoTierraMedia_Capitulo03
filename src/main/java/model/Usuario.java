@@ -1,5 +1,7 @@
 package model;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.SQLException;
 
 import app.NoExisteTematicaException;
@@ -151,7 +153,7 @@ public class Usuario implements Comparable<Usuario>{
 	}
 
 	
-	public void comprar(Sugerible producto, Ticket ticket) throws SQLException, NoExisteTematicaException {
+	public void comprar(Sugerible producto, Ticket ticket) throws SQLException, NoExisteTematicaException, FileNotFoundException, IOException {
 		AtraccionService atraccion = new AtraccionService();
 		
 		this.setCantidadMonedas(this.cantidadMonedas - producto.getCosto());
@@ -178,10 +180,7 @@ public class Usuario implements Comparable<Usuario>{
 			}
 			ticket.setPromocionesReservadas(producto.getNombre());
 		}
+		Sistema.crearTicket(ticket);
 		Sistema.actualizarDatos();
 	}
-
-	
-	
-	
 }

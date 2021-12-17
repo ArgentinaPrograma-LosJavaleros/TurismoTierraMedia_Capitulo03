@@ -1,0 +1,29 @@
+
+:root {
+	--size-avatar: 50px;	
+	--size-aside-logo: 70px;
+	
+	--color-font: #555; 
+	--color-avatar-background: #fee;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+a.usuario {
+	text-decoration: none;
+	color: var(--color-font);
+}
+
+.usuario .usuario-stats .usuario-avatar {
+	width: var(--size-avatar);
+	height: var(--size-avatar);
+	background-color: var(--color-avatar-background);
+}
+
+.aside-logo .aside-logo-link .aside-logo-img {
+	height: var(--size-aside-logo);
+}
+

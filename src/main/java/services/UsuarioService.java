@@ -5,6 +5,7 @@ import java.util.List;
 
 import app.NoExisteTematicaException;
 import model.Usuario;
+import persistence.commons.CRUD;
 import persistence.impl.UsuarioDAOImp;
 
 public class UsuarioService extends UsuarioDAOImp {
@@ -53,4 +54,8 @@ public class UsuarioService extends UsuarioDAOImp {
 		return super.findAllBy(campo, operador, valor);
 	}
 	
+	@Override
+	public int actualizarActivo(Integer id, Integer valor) throws SQLException {
+		return super.actualizarActivo(id, valor);
+	}
 }
