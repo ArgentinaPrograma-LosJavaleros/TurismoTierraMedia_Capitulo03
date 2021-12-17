@@ -40,9 +40,12 @@
 						</c:otherwise>
 					</c:choose>
 		            <td>
-		                <button class="btn btn-primary ">
-		                    <i class="fas fa-edit"></i>
-		                </button>
+		            	<form method="GET" action="admin-editar.admin">
+		            		<input type="hidden" name="id" value="${usuario.id}"/>		            	
+			                <button class="btn btn-primary ">
+			                    <i class="fas fa-edit"></i>
+			                </button>
+		            	</form>
 		                <button class="btn btn-danger ">
 		                    <i class="fas fa-trash"></i>
 		                </button>

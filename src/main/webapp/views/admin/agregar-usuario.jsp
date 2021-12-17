@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -22,44 +21,35 @@
 
                 <p class="mb-5">Acá se pueden editar los datos de una usuario</p>
 
-               	<form class="w-50" method="POST" action="admin-editar.admin">
+               	<form class="w-50" method="post" action="">
 				    
-				    <input type="hidden" name="id" value="${usuario.id}">
+				    <input type="hidden" name="id" value="">
 				    
 				    <div class="mb-3">
 				      <legend>Nombre</legend>
-				      <input type="text" class="form-control" value="${usuario.nombre}" name="nombre">
+				      <input type="text" class="form-control">
 				    </div>
 				   
 				    <div class="mb-3">
 				      <legend>Tiempo</legend>
-				      <input type="number" min="0" class="form-control" value="${usuario.tiempoDisponible}" name="tiempo">
+				      <input type="number" min="0" class="form-control">
 				    </div>
 				    
 				    <div class="mb-3">
 				      <legend>Monedas</legend>
-				      <input type="number" min="0" class="form-control" value="${usuario.cantidadMonedas}" name="monedas">
+				      <input type="number" min="0" class="form-control">
 				    </div>
 				    
 				    <div class="mb-3">
 				      <legend>Preferencia</legend>
-				      <select class="form-select" name="preferencia">
-				      	<c:forEach items="${tematicas}" var="tematica">
-				      		<c:choose>
-								<c:when test="${usuario.preferencia.id == tematica.id}">
-									<option value="${tematica.id}" selected>${tematica.nombre}</option>	
-								</c:when>
-								<c:otherwise>
-						      		<option value="${tematica.id}">${tematica.nombre}</option>			
-								</c:otherwise>
-							</c:choose>
-				      	</c:forEach>
+				      <select class="form-select">
+				      	
 				      </select>
 				    </div>
 				    
 			        <div class="mb-3">
 				      <div class="form-check">
-				        <input class="form-check-input" type="checkbox" value="" name="admin">
+				        <input class="form-check-input" type="checkbox">
 				        <label class="form-check-label">
 				          ¿Es Admin?
 				        </label>
