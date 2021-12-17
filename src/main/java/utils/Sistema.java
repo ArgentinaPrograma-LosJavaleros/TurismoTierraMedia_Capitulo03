@@ -47,10 +47,14 @@ public class Sistema {
 	}
 
 	public static boolean login(Usuario usuarioLogin, String pass) {
-		Boolean val = true;
+		Boolean val = true;	
 		
 		try {
+			
 			usuarioActual = getUsuarios().get(getUsuarios().indexOf(usuarioLogin));
+			if(!usuarioActual.getActivo())
+				throw new IndexOutOfBoundsException();
+			
 		} catch (IndexOutOfBoundsException iobe) {
 			System.out.println("El usuario actual no existe.");
 			val = false;

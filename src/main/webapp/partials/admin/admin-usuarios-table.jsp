@@ -46,9 +46,26 @@
 			                    <i class="fas fa-edit"></i>
 			                </button>
 		            	</form>
-		                <button class="btn btn-danger ">
-		                    <i class="fas fa-trash"></i>
-		                </button>
+		            	
+		            	<form method="POST" action="admin-baja.admin">
+		            		<input type="hidden" name="id" value="${usuario.id}"/>
+		            		<c:choose>
+								<c:when test="${usuario.activo}">
+		            				<input type="hidden" name="activo" value="0"/>
+									<button class="btn btn-danger ">
+			                    		<i class="fas fa-trash"></i>
+			                		</button>	
+								</c:when>
+								<c:otherwise>
+									<input type="hidden" name="activo" value="1"/>
+									<button class="btn btn-success ">
+			                    		<i class="fas fa-trash-restore"></i>
+			                		</button>			
+								</c:otherwise>
+							</c:choose>		            	
+			                
+			                
+		            	</form>
 		            </td>
 	        	</tr>
 	    	</c:forEach>
