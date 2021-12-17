@@ -52,7 +52,7 @@ public class ListSugeribleServlet extends HttpServlet implements Servlet {
 			req.setAttribute("promociones", promociones);
 
 			
-			RequestDispatcher disp = req.getRequestDispatcher("home.do");
+			RequestDispatcher disp = req.getRequestDispatcher("/home.jsp");
 
 			disp.forward(req, res);
 		} catch (SQLException | NoExisteTematicaException e) {

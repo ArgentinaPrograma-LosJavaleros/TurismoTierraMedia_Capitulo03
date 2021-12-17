@@ -232,6 +232,7 @@ public class PromocionDAOImp implements PromocionDAO {
 			int idFree = 0;
 			String nombre = rs.getString("nombre");
 			int costo = rs.getInt("costo");
+			Boolean activo = rs.getBoolean("activo");
 			
 			ArrayList<Atraccion> atracciones = new ArrayList<Atraccion>();
 			TipoPromocion tipoPromocion = tipoPromo.findById(rs.getInt("id_tipo_promocion"));
@@ -246,11 +247,11 @@ public class PromocionDAOImp implements PromocionDAO {
 			}
 			
 			if(tipoPromocion.getId() == 1) {
-				return new PromoAbsoluta(id, nombre, costo, atracciones, tipoPromocion); 
+				return new PromoAbsoluta(id, nombre, costo, atracciones, tipoPromocion, activo); 
 			}
 			
 			if(tipoPromocion.getId() == 2) {
-				return new PromoAxB(id, nombre, atraccion.findById(idFree), atracciones, tipoPromocion); 
+				return new PromoAxB(id, nombre, atraccion.findById(idFree), atracciones, tipoPromocion, activo); 
 			}
 			
 			if(tipoPromocion.getId() == 3) {
@@ -260,7 +261,7 @@ public class PromocionDAOImp implements PromocionDAO {
 				if(rs3.next())
 					oferton = rs3.getDouble("descuento");
 					
-				return new PromoPorcentual(id, nombre, oferton, atracciones, tipoPromocion); 
+				return new PromoPorcentual(id, nombre, oferton, atracciones, tipoPromocion, activo); 
 			}
 		}
 		
@@ -299,7 +300,8 @@ public class PromocionDAOImp implements PromocionDAO {
 															rs.getString("nombre"),
 															rs.getInt("costo"),
 															atracciones,
-															tipoPromocion));
+															tipoPromocion,
+															rs.getBoolean("activo")));
 			}
 			if(tipoPromocion.getId() == 2) {
 				listaDePromociones.add(new PromoAxB(
@@ -307,7 +309,8 @@ public class PromocionDAOImp implements PromocionDAO {
 															rs.getString("nombre"),
 															atraccion.findById(idFree),
 															atracciones,
-															tipoPromocion));
+															tipoPromocion,
+															rs.getBoolean("activo")));
 			}
 			if(tipoPromocion.getId() == 3) {
 				double oferton = 0.0;
@@ -321,7 +324,8 @@ public class PromocionDAOImp implements PromocionDAO {
 															rs.getString("nombre"),
 															oferton,
 															atracciones,
-															tipoPromocion));
+															tipoPromocion,
+															rs.getBoolean("activo")));
 			}
 		}
 		return listaDePromociones;

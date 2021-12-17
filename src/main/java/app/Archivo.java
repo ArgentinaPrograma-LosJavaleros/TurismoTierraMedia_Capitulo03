@@ -102,58 +102,58 @@ public class Archivo {
 		return atracciones;
 	}
 
-	public static ArrayList<Promocion> cargarPromociones() {
-
-		ArrayList<Promocion> promociones = new ArrayList<Promocion>();
-
-		Scanner sc = null;
-
-		try {
-
-			sc = iniciarScanner("promociones.txt");
-
-			while (sc.hasNext()) {
-
-				String line = sc.nextLine();
-				String valores[] = line.split(" ");
-				valores[0] = valores[0].replace('_', ' ');
-
-				TipoPromocion promo = new TipoPromocion(valores[1]);
-				ArrayList<Atraccion> atraccionesPromocion = new ArrayList<Atraccion>();
-
-				atraccionesPromocion.add(getAtraccion(valores[3].replace('_', ' ')));
-				atraccionesPromocion.add(getAtraccion(valores[4].replace('_', ' ')));
-				
-				if (promo.getNombre().toLowerCase().equals("absoluta")) {
-					promo.setId(1);
-					int beneficio = Integer.parseInt(valores[2]);
-					promociones.add(new PromoAbsoluta(0, valores[0], beneficio, atraccionesPromocion, promo));
-				}
-				
-				if (promo.getNombre().toLowerCase().equals("axb")) {
-					promo.setId(2);
-					Atraccion atraccionGratis = getAtraccion(valores[2]);
-					promociones.add(new PromoAxB(0,valores[0], atraccionGratis, atraccionesPromocion, promo));
-				}
-
-				if (promo.getNombre().toLowerCase().equals("porcentual")) {
-					promo.setId(3);
-					double porcentaje = Double.parseDouble(valores[2]);
-					promociones.add(new PromoPorcentual(0,valores[0], porcentaje, atraccionesPromocion, promo));
-				}
-
-			}
-
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (NoExisteAtraccionException e) {
-			e.printStackTrace();
-		} finally {
-			sc.close();
-		}
-
-		return promociones;
-	}
+//	public static ArrayList<Promocion> cargarPromociones() {
+//
+//		ArrayList<Promocion> promociones = new ArrayList<Promocion>();
+//
+//		Scanner sc = null;
+//
+//		try {
+//
+//			sc = iniciarScanner("promociones.txt");
+//
+//			while (sc.hasNext()) {
+//
+//				String line = sc.nextLine();
+//				String valores[] = line.split(" ");
+//				valores[0] = valores[0].replace('_', ' ');
+//
+//				TipoPromocion promo = new TipoPromocion(valores[1]);
+//				ArrayList<Atraccion> atraccionesPromocion = new ArrayList<Atraccion>();
+//
+//				atraccionesPromocion.add(getAtraccion(valores[3].replace('_', ' ')));
+//				atraccionesPromocion.add(getAtraccion(valores[4].replace('_', ' ')));
+//				
+//				if (promo.getNombre().toLowerCase().equals("absoluta")) {
+//					promo.setId(1);
+//					int beneficio = Integer.parseInt(valores[2]);
+//					promociones.add(new PromoAbsoluta(0, valores[0], beneficio, atraccionesPromocion, promo));
+//				}
+//				
+//				if (promo.getNombre().toLowerCase().equals("axb")) {
+//					promo.setId(2);
+//					Atraccion atraccionGratis = getAtraccion(valores[2]);
+//					promociones.add(new PromoAxB(0,valores[0], atraccionGratis, atraccionesPromocion, promo));
+//				}
+//
+//				if (promo.getNombre().toLowerCase().equals("porcentual")) {
+//					promo.setId(3);
+//					double porcentaje = Double.parseDouble(valores[2]);
+//					promociones.add(new PromoPorcentual(0,valores[0], porcentaje, atraccionesPromocion, promo));
+//				}
+//
+//			}
+//
+//		} catch (FileNotFoundException e) {
+//			e.printStackTrace();
+//		} catch (NoExisteAtraccionException e) {
+//			e.printStackTrace();
+//		} finally {
+//			sc.close();
+//		}
+//
+//		return promociones;
+//	}
 
 	private static Scanner iniciarScanner(String nombre) throws FileNotFoundException {
 		Scanner sc = new Scanner(new File(DIRECCION_ARCHIVO + nombre));

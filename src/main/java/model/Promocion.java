@@ -20,14 +20,6 @@ public abstract class Promocion extends Sugerible {
 		this.setActivo(activo);
 	}
 	
-	// Constructor
-	public Promocion(Integer idPromocion,String nombrePromocion, TipoPromocion tipoPromocion,
-			ArrayList<Atraccion> atracciones) {
-		this(idPromocion, nombrePromocion, tipoPromocion, atracciones, true);
-	}
-	
-	
-
 	// Setters
 	//--------------------------------------------------------------------------
 	public void setTipoPromocion(TipoPromocion tipoPromocion) {
