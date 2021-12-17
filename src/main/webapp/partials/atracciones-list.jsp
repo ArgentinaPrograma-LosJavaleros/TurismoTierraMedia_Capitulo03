@@ -9,6 +9,7 @@
 				<div class="">
 					<img class="card-img-top"
 						src="/TurismoTierraMedia_Capitulo03/assets/img/${fn:toLowerCase(atraccion.tematica)}.jpg"
+						onerror="this.src='/TurismoTierraMedia_Capitulo03/assets/img/default.jpg';"
 						alt="">
 				</div>
 				<div class="card-body p-3">

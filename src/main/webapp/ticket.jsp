@@ -6,11 +6,11 @@
 <html>
 
 <head>
-<jsp:include page="partials/head.jsp"></jsp:include>
+	<jsp:include page="partials/head.jsp"></jsp:include>
 
 </head>
 
-<body>
+<body onload="timeConverter()">
 	<jsp:include page="partials/navbar.jsp"></jsp:include>
 
 	<section class="container-xl mt-5">

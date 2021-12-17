@@ -21,7 +21,7 @@ public class LoggedFilter implements Filter {
 		if (user != null)
 			chain.doFilter(request, response);
 		else {
-			RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/login.jsp");
+			RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("TurismoTierraMedia_Capitulo03/login.jsp");
 			dispatcher.forward(request, response);
 		}
 		

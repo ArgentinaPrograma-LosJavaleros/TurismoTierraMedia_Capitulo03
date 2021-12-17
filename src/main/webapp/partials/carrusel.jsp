@@ -11,7 +11,7 @@
 		                <div class=" shadow-lg card border border-info overflow-hidden">
 		                
 		                    <div class="">
-			                    <img class="card-img-top card-img-carrusel" src="./assets/img/${fn:toLowerCase(promocion.tematica)}.jpg" alt=""/>
+			                    <img class="card-img-top card-img-carrusel" src="./assets/img/${fn:toLowerCase(promocion.tematica)}.jpg" onerror="this.src='/TurismoTierraMedia_Capitulo03/assets/img/default.jpg';" alt=""/>
 								<div class="d-flex badge-etiquetas position-absolute">
 				                    <span class="badge rounded-pill me-1">
 					                	PROMOCIÓN
@@ -55,7 +55,7 @@
             		<div class="col btn-mas-info" value="${atraccion.id}" name="atraccion">         	
 		                <div class="shadow-lg card border border-info overflow-hidden">
 		                    <div class="">
-		                        <img class="card-img-top card-img-carrusel" src="./assets/img/${fn:toLowerCase(atraccion.tematica)}.jpg" alt="" />
+		                        <img class="card-img-top card-img-carrusel" src="./assets/img/${fn:toLowerCase(atraccion.tematica)}.jpg" onerror="this.src='/TurismoTierraMedia_Capitulo03/assets/img/default.jpg';" alt="" />
 		                        <div class="d-flex badge-etiquetas position-absolute">
 			                        <span class="badge rounded-pill me-1">
 			                        	ATRACCIÓN

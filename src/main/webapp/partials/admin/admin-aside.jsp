@@ -15,19 +15,19 @@
             </a>
         </li>
         <li>
-            <a href="#" class="nav-link text-white">
+            <a href="promociones-list.admin" class="nav-link text-white">
                 <i class="fas fa-percentage"></i>
                 Promociones
             </a>
         </li>
         <li>
-            <a href="#" class="nav-link text-white">
+            <a href="atracciones-list.admin" class="nav-link text-white">
                 <i class="fas fa-hat-wizard"></i>
                 Atracciones
             </a>
         </li>
         <li>
-            <a href="#" class="nav-link text-white">
+            <a href="tickets-list.admin" class="nav-link text-white">
                 <i class="fas fa-shopping-bag"></i>
                 Compras
             </a>

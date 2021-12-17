@@ -9,19 +9,19 @@
 	            <th>Nombre</th>
 	            <th>Costo</th>
 	            <th>Tipo</th>
+	            <th>Habilitado</th>
 	            <th>Acciones</th>
 	        </tr>
 	    </thead>
 	    <tbody>
-	    	<c:forEach items="${promociones}" var="usuario">
+	    	<c:forEach items="${promociones}" var="promocion">
 	    		<tr>
-		            <td>${promociones.id}</td>
-		            <td>${promociones.nombre}</td>
-		            <td>${promociones.costo}</td>
-		            <td>${promociones.tiempoDisponible}</td>
-		            <td>${usuario.preferencia}</td>
+		            <td>${promocion.id}</td>
+		            <td>${promocion.nombre}</td>
+		            <td>${promocion.costo}</td>
+		            <td>${promocion.tipoPromocion}</td>
 		            <c:choose>
-						<c:when test="${promociones.activo}">
+						<c:when test="${promocion.activo}">
 							<td>HABILITADA</td>
 						</c:when>
 						<c:otherwise>
