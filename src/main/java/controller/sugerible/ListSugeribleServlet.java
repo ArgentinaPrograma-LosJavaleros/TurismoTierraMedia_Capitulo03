@@ -18,6 +18,7 @@ import model.Promocion;
 import services.AtraccionService;
 import services.PromocionService;
 import utils.OrdenadorPorTematica;
+import utils.Sistema;
 
 @WebServlet("/home.do")
 public class ListSugeribleServlet extends HttpServlet implements Servlet {
@@ -40,17 +41,19 @@ public class ListSugeribleServlet extends HttpServlet implements Servlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		try {
+			
 			List<Atraccion> atracciones = atraccionService.findAll();
 			List<Promocion> promociones = promocionService.findAll();
 			
 			Collections.sort(atracciones, new OrdenadorPorTematica());
 			Collections.sort(promociones, new OrdenadorPorTematica());
 			
-			req.setAttribute("atracciones", atracciones); 
+			req.setAttribute("atracciones", atracciones);
 			req.setAttribute("promociones", promociones);
+
 			
-			
-			RequestDispatcher disp = getServletContext().getRequestDispatcher("/home.jsp");
+			RequestDispatcher disp = req.getRequestDispatcher("home.do");
+
 			disp.forward(req, res);
 		} catch (SQLException | NoExisteTematicaException e) {
 			e.printStackTrace();
