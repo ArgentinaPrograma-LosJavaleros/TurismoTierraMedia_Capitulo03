@@ -16,7 +16,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import model.Usuario;
 import services.UsuarioService;
 
-@WebServlet("/admin/editar.admin")
+@WebServlet("/admin-editar.admin")
 public class EditarUsuarioServlet extends HttpServlet implements Servlet {
 
 	private static final long serialVersionUID = -4139807152556264888L;
