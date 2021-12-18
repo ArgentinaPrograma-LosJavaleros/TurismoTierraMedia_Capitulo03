@@ -21,7 +21,10 @@
 
                 <p class="mb-5">Aca se podra editar, agregar e inhabilitar usuarios</p>
                	
-                <button class="btn btn-primary mb-4">Agregar Usuario</button>
+               	<form method="GET" action="admin-alta.admin">
+	            	<button type="submit" class="btn btn-primary mb-4"><i class="fas fa-user-plus me-2"></i>Agregar Usuario</button>
+               	</form>
+               	
                 
                 <jsp:include page="/partials/admin/admin-usuarios-table.jsp"></jsp:include>
             </section>

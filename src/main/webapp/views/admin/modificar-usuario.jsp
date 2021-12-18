@@ -28,22 +28,22 @@
 				    
 				    <div class="mb-3">
 				      <legend>Nombre</legend>
-				      <input type="text" class="form-control" value="${usuario.nombre}" name="nombre">
+				      <input type="text" class="form-control" value="${usuario.nombre}" name="nombre" required>
 				    </div>
 				   
 				    <div class="mb-3">
 				      <legend>Tiempo</legend>
-				      <input type="number" min="0" class="form-control" value="${usuario.tiempoDisponible}" name="tiempo">
+				      <input type="number" min="0" class="form-control" value="${usuario.tiempoDisponible}" name="tiempo" required>
 				    </div>
 				    
 				    <div class="mb-3">
 				      <legend>Monedas</legend>
-				      <input type="number" min="0" class="form-control" value="${usuario.cantidadMonedas}" name="monedas">
+				      <input type="number" min="0" class="form-control" value="${usuario.cantidadMonedas}" name="monedas" required>
 				    </div>
 				    
 				    <div class="mb-3">
 				      <legend>Preferencia</legend>
-				      <select class="form-select" name="preferencia">
+				      <select class="form-select" name="preferencia" required>
 				      	<c:forEach items="${tematicas}" var="tematica">
 				      		<c:choose>
 								<c:when test="${usuario.preferencia.id == tematica.id}">
